@@ -1,0 +1,56 @@
+﻿<Application x:Class="OtherBarberShop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OtherBarberShop"
+             StartupUri="\ViewFolder\WindowFolder\AutorizationWindows.xaml">
+    <Application.Resources>
+        <!--#region Page-->
+        <Style x:Key="PageMunu" TargetType="Page">
+            <Setter Property="Height" Value="664.04"/>
+            <Setter Property="Width" Value="970"/>
+        </Style>
+        <!--#endregion-->
+        <!--#region TextBlock-->
+        <Style TargetType="TextBlock" x:Key="StyleTExtBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+        </Style>
+        <Style x:Key="ListTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StyleTExtBlock}">
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+        <!--#endregion-->
+        <!--#region Button-->
+        <Style TargetType="Button" x:Key="MenuButton">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+        <!--#endregion-->
+        <!--#region TextBox-->
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="5 0 0 0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="MaxLength" Value="50"/>
+        </Style>
+        <!--#endregion -->
+        <!--#region ComboBox-->
+        <Style TargetType="ComboBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="5 0 0 0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+        </Style>
+        <!--#endregion -->
+    </Application.Resources>
+</Application>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c92995f2c8174b299e7a7bf907e07976" Name="Diagram1">
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ClientTabel" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.HaircutTable" Width="1.5" PointX="3" PointY="5.75" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ImageWorkerTable" Width="1.5" PointX="0.75" PointY="1.75" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RecordTable" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RoleTable" Width="1.5" PointX="0.75" PointY="5.875" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.WorkerTable" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel" />
+        <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable" />
+        <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable" />
+        <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_RecordTable_WorkerTable" />
+        <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_WorkerTable_RoleTable" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

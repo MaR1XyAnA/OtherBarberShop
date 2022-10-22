@@ -1,0 +1,95 @@
+﻿<Page x:Class="OtherBarberShop.ViewFolder.PageFolder.WorkerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.PageFolder"
+      mc:Ignorable="d" 
+      Style="{StaticResource PageMunu}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel>
+                <StackPanel Margin="0 0 10 5" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock
+                        Text="ФАМИЛИЯ" 
+                        Style="{StaticResource StyleTExtBlock}"/>
+                    <TextBox
+                        x:Name="SurnameWorkerTextBox"
+                        Width="300"
+                        Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0 5 10 5" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock
+                        Text="ИМЯ" 
+                        Style="{StaticResource StyleTExtBlock}"/>
+                    <TextBox
+                        x:Name="NameWorkerTextBox"
+                        Width="300"
+                        Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0 5 10 0" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock
+                        Text="ОТЧЕСТВО" 
+                        Style="{StaticResource StyleTExtBlock}"/>
+                    <TextBox
+                        x:Name="MiddlenameWorkerTextBox"
+                        Width="300"
+                        Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Margin="10 0 0 5" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock
+                        Text="РОЛЬ" 
+                        Style="{StaticResource StyleTExtBlock}"/>
+                    <ComboBox
+                        Name="RoleComboBox"
+                        DisplayMemberPath="NameRole"
+                        Width="300"
+                        Height="40"/>
+                </StackPanel>
+                <StackPanel Margin="10 5 0 5" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock
+                        Text="LOGIN" 
+                        Style="{StaticResource StyleTExtBlock}"/>
+                    <TextBox
+                        x:Name="LoginWorkerTextBox"
+                        Width="300"
+                        Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="10 5 0 0" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <TextBlock
+                        Text="PASSWORD" 
+                        Style="{StaticResource StyleTExtBlock}"/>
+                    <TextBox
+                        x:Name="PasswordWorkerTextBox"
+                        Width="300"
+                        Style="{StaticResource TextBoxStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Button
+            x:Name="NewWorkerButton"
+            Click="NewWorkerButton_Click"
+            Margin="0 20 0 0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="300"
+            Content="ДОБАВИТЬ"
+            Style="{StaticResource MenuButton}"/>
+        <Button
+            x:Name="ListWorkerButton"
+            Click="ListWorkerButton_Click"
+            Margin="0 350 0 0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="700"
+            Content="СПИСОК СОТРУДНИКОВ"
+            Style="{StaticResource MenuButton}"/>
+    </Grid>
+</Page>
