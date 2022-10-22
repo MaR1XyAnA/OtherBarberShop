@@ -18,6 +18,8 @@ namespace OtherBarberShop.ModelFolder
         public int PNWorker { get; set; }
         public string PNClient { get; set; }
         public string PNHaircut { get; set; }
+        public System.DateTime DateRecord { get; set; }
+        public System.TimeSpan TimeRecord { get; set; }
     
         public virtual ClientTabel ClientTabel { get; set; }
         public virtual HaircutTable HaircutTable { get; set; }

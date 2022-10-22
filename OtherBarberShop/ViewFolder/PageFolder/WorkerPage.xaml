@@ -17,7 +17,7 @@
                 <StackPanel Margin="0 0 10 5" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <TextBlock
                         Text="ФАМИЛИЯ" 
-                        Style="{StaticResource StyleTExtBlock}"/>
+                        Style="{StaticResource StyleTextBlock}"/>
                     <TextBox
                         x:Name="SurnameWorkerTextBox"
                         Width="300"
@@ -26,7 +26,7 @@
                 <StackPanel Margin="0 5 10 5" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <TextBlock
                         Text="ИМЯ" 
-                        Style="{StaticResource StyleTExtBlock}"/>
+                        Style="{StaticResource StyleTextBlock}"/>
                     <TextBox
                         x:Name="NameWorkerTextBox"
                         Width="300"
@@ -35,7 +35,7 @@
                 <StackPanel Margin="0 5 10 0" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <TextBlock
                         Text="ОТЧЕСТВО" 
-                        Style="{StaticResource StyleTExtBlock}"/>
+                        Style="{StaticResource StyleTextBlock}"/>
                     <TextBox
                         x:Name="MiddlenameWorkerTextBox"
                         Width="300"
@@ -46,7 +46,7 @@
                 <StackPanel Margin="10 0 0 5" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <TextBlock
                         Text="РОЛЬ" 
-                        Style="{StaticResource StyleTExtBlock}"/>
+                        Style="{StaticResource StyleTextBlock}"/>
                     <ComboBox
                         Name="RoleComboBox"
                         DisplayMemberPath="NameRole"
@@ -56,7 +56,7 @@
                 <StackPanel Margin="10 5 0 5" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <TextBlock
                         Text="LOGIN" 
-                        Style="{StaticResource StyleTExtBlock}"/>
+                        Style="{StaticResource StyleTextBlock}"/>
                     <TextBox
                         x:Name="LoginWorkerTextBox"
                         Width="300"
@@ -65,7 +65,7 @@
                 <StackPanel Margin="10 5 0 0" VerticalAlignment="Center" HorizontalAlignment="Right">
                     <TextBlock
                         Text="PASSWORD" 
-                        Style="{StaticResource StyleTExtBlock}"/>
+                        Style="{StaticResource StyleTextBlock}"/>
                     <TextBox
                         x:Name="PasswordWorkerTextBox"
                         Width="300"
@@ -80,8 +80,7 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Width="300"
-            Content="ДОБАВИТЬ"
-            Style="{StaticResource MenuButton}"/>
+            Content="ДОБАВИТЬ"/>
         <Button
             x:Name="ListWorkerButton"
             Click="ListWorkerButton_Click"
@@ -89,7 +88,6 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Width="700"
-            Content="СПИСОК СОТРУДНИКОВ"
-            Style="{StaticResource MenuButton}"/>
+            Content="СПИСОК СОТРУДНИКОВ"/>
     </Grid>
 </Page>

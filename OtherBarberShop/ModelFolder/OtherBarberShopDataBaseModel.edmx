@@ -29,10 +29,12 @@
           <Key>
             <PropertyRef Name="PersonalNumberRecord" />
           </Key>
-          <Property Name="PersonalNumberRecord" Type="int" Nullable="false" />
+          <Property Name="PersonalNumberRecord" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PNWorker" Type="int" Nullable="false" />
           <Property Name="PNClient" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PNHaircut" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="DateRecord" Type="date" Nullable="false" />
+          <Property Name="TimeRecord" Type="time" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="RoleTable">
           <Key>
@@ -212,10 +214,12 @@
           <Key>
             <PropertyRef Name="PersonalNumberRecord" />
           </Key>
-          <Property Name="PersonalNumberRecord" Type="Int32" Nullable="false" />
+          <Property Name="PersonalNumberRecord" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PNWorker" Type="Int32" Nullable="false" />
           <Property Name="PNClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PNHaircut" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DateRecord" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TimeRecord" Type="Time" Nullable="false" Precision="0" />
           <NavigationProperty Name="ClientTabel" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel" FromRole="RecordTable" ToRole="ClientTabel" />
           <NavigationProperty Name="HaircutTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable" FromRole="RecordTable" ToRole="HaircutTable" />
           <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_WorkerTable" FromRole="RecordTable" ToRole="WorkerTable" />
@@ -313,7 +317,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -345,6 +349,8 @@
           <EntitySetMapping Name="RecordTable">
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.RecordTable">
               <MappingFragment StoreEntitySet="RecordTable">
+                <ScalarProperty Name="TimeRecord" ColumnName="TimeRecord" />
+                <ScalarProperty Name="DateRecord" ColumnName="DateRecord" />
                 <ScalarProperty Name="PNHaircut" ColumnName="PNHaircut" />
                 <ScalarProperty Name="PNClient" ColumnName="PNClient" />
                 <ScalarProperty Name="PNWorker" ColumnName="PNWorker" />

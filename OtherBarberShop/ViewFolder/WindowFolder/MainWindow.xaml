@@ -6,37 +6,40 @@
         xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.WindowFolder"
         mc:Ignorable="d"
         Title="ГЛАВНОЕ ОКНО" 
-        Height="700" Width="1200"
-        WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="210"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5 10 5 0">
-            <Button
+        Height="700"
+        Width="1200"
+        WindowStartupLocation="CenterScreen"
+        Style="{StaticResource WindowsStyle}">
+    <Grid Style="{StaticResource ColorGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Frame 
+            Grid.Row="0"  
+            x:Name="MainFrame"/>
+        <StackPanel
+            HorizontalAlignment="Center"
+            Grid.Row="1" 
+            Orientation="Horizontal">
+            <ToggleButton
+                Margin="0 0 10 0"
+                Style="{StaticResource MenuToggleButton}"
                 x:Name="WorkerButton"
                 Click="WorkerButton_Click"
-                Margin="0 0 0 5"
-                Style="{StaticResource MenuButton}"
                 Content="СОТРУДНИКИ"/>
-            <Button 
+            <ToggleButton 
+                Margin="10 0 10 0"
+                Style="{StaticResource MenuToggleButton}"
                 Name="RecordButton"
                 Click="RecordButton_Click"
-                Margin="0 5 0 5"
-                Style="{StaticResource MenuButton}"
-                Content="ЗАПИСЬ"/>
-            <Button 
+                Content="КЛИЕНТЫ"/>
+            <ToggleButton 
+                Margin="10 0 0 0"
+                Style="{StaticResource MenuToggleButton}"
                 Name="ServeseButton"
                 Click="ServeseButton_Click"
-                Margin="0 5 0 0"
-                Style="{StaticResource MenuButton}"
                 Content="УСЛУГИ"/>
         </StackPanel>
-        <Frame
-            x:Name="MainFrame"
-            NavigationUIVisibility="Hidden"
-            Grid.Column="1"
-            Margin="10"/>
     </Grid>
 </Window>

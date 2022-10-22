@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="WindowsStyle" TargetType="Window">
+        <Setter Property="Icon" Value="\ResourcesFolder\Icons\OtherBarberShopIcons.png"/>
+        <Setter Property="ResizeMode" Value="CanMinimize"/>
+    </Style>
+</ResourceDictionary>
