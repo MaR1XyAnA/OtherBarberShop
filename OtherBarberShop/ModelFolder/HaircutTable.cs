@@ -21,7 +21,7 @@ namespace OtherBarberShop.ModelFolder
         }
     
         public string NameHaircut { get; set; }
-        public Nullable<decimal> PriceHaircut { get; set; }
+        public decimal PriceHaircut { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RecordTable> RecordTable { get; set; }

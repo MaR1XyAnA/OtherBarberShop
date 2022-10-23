@@ -1,18 +1,8 @@
 ﻿using OtherBarberShop.ClassFolder;
-using System;
-using System.Collections.Generic;
+using OtherBarberShop.ModelFolder;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace OtherBarberShop.ViewFolder.PageFolder
 {
@@ -21,7 +11,51 @@ namespace OtherBarberShop.ViewFolder.PageFolder
         public ListShopButtonPage()
         {
             InitializeComponent();
+            List();
+        }
+
+        private void List()
+        {
             ListShopButtonListBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
+        }
+
+        private void HaircutButton_Click(object sender, RoutedEventArgs e)
+        {
+            HaircutFrame.Navigate(new AddHaircutPage());
+            ListShopButtonListBox.Visibility = Visibility.Collapsed;
+            HaircutStackPanel.Visibility = Visibility.Visible;
+            NewHaircutButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void ListShopButtonListBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            HaircutTable haircutTable = (HaircutTable)ListShopButtonListBox.SelectedItem;
+            HaircutFrame.Navigate(new EdditHaircutPage(haircutTable));
+            ListShopButtonListBox.Visibility = Visibility.Collapsed;
+            HaircutStackPanel.Visibility = Visibility.Visible;
+            NewHaircutButton.Visibility = Visibility.Collapsed;
+            DeliteHaircutButton.Visibility = Visibility.Collapsed;
+        }
+
+        private void DeliteHaircutButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show(
+                "Вы действительно хотите удалить данную причёску?",
+                "Удаление",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var DaliteHaircut = ListShopButtonListBox.SelectedItem as HaircutTable;
+                AppConnectModelClass.DataBase.HaircutTable.Remove(DaliteHaircut);
+                AppConnectModelClass.DataBase.SaveChanges();
+                ListShopButtonListBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
+                DeliteHaircutButton.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void ListShopButtonListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DeliteHaircutButton.Visibility = Visibility.Visible;
         }
     }
 }

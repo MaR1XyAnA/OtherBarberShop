@@ -45,7 +45,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Thumb}">
-                    <Border CornerRadius="5" Background="#66FCF1" Width="8" BorderBrush="Transparent">
+                    <Border CornerRadius="0" Background="#66FCF1" Width="8" BorderBrush="Transparent"> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                         <Rectangle Fill="Transparent" Margin="1"></Rectangle>
                     </Border>
                 </ControlTemplate>
@@ -54,7 +54,7 @@
     </Style>
 
     <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
-        <Grid Margin="0 0 0 0">
+        <Grid Margin="0">
             <Grid.RowDefinitions>
                 <RowDefinition MaxHeight="1"/>
                 <RowDefinition Height="*"/>

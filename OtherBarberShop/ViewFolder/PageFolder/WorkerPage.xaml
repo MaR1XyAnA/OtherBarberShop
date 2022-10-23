@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.PageFolder"
       mc:Ignorable="d" 
-      Title="СПИСОК СОТРУДНИКОВ"
       Style="{StaticResource PageMunu}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -42,9 +41,8 @@
                                 Height="Auto"
                                 CornerRadius="0" 
                                 Opacity="1"
-                                Background="Transparent"
-                                BorderBrush="#66FCF1" 
-                                BorderThickness="1"/>
+                                BorderBrush="#1F2833" 
+                                BorderThickness="50"/>
                             <StackPanel 
                                 VerticalAlignment="Center" 
                                 HorizontalAlignment="Center">
@@ -56,8 +54,7 @@
                                     Stretch="UniformToFill"
                                     Height="100"
                                     Width="100"
-                                    Source="{Binding ImageWorkerTable.CodImage}">
-                                </Image>
+                                    Source="{Binding ImageWorkerTable.CodImage}"/>
                             </StackPanel>
                             <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0">
                                 <StackPanel Orientation="Horizontal">

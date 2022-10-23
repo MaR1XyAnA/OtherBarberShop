@@ -5,39 +5,21 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.PageFolder"
       mc:Ignorable="d" 
-      Style="{StaticResource PageMunu}"
-      Title="СПИСОК УСЛУГ">
-
+      Style="{StaticResource PageMunu}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1.6*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Border Grid.Row="0" Grid.RowSpan="2" Margin="20" CornerRadius="0" BorderBrush="#33FFFFFF" BorderThickness="0">
+        <Border Grid.RowSpan="2" Margin="20" CornerRadius="0" BorderBrush="#33FFFFFF" BorderThickness="0">
             <ListBox 
-                Margin="10"
+                Margin="5 0 5 30"
                 Background="Transparent"
                 BorderThickness="0"
                 x:Name="ListShopButtonListBox"
-                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="ListBoxItem">
-                        <Setter Property="IsSelected" Value="{Binding Content.IsSelected, Mode=TwoWay, RelativeSource={RelativeSource Self}}"/>
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="ListBoxItem">
-                                    <ContentPresenter/>
-                                    <ControlTemplate.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="BorderBrush" Value="Red"/>
-                                            <Setter Property="BorderThickness" Value="1"/>
-                                        </Trigger>
-                                    </ControlTemplate.Triggers>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ListBox.ItemContainerStyle>
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                MouseDoubleClick="ListShopButtonListBox_MouseDoubleClick"
+                SelectionChanged="ListShopButtonListBox_SelectionChanged">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <WrapPanel IsItemsHost="True" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent"/>
@@ -52,7 +34,7 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Border Background="Transparent" Margin="5 0 5 70">
+                            <Border Background="Transparent" Margin="5 15 5 15">
                                 <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent">
                                     <Border CornerRadius="0" Height="200" Width="220">
                                         <Border.Background>
@@ -74,13 +56,13 @@
                                                     Text="{Binding NameHaircut}"
                                                     Style="{StaticResource StyleTextBlock}"/>
                                             </StackPanel>
-                                            <StackPanel Margin="0 0 23 0" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                            <StackPanel Margin="0 0 10 10" Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                                                 <TextBlock
                                                     Margin="0 0 5 0"
                                                     Text="{Binding PriceHaircut}"
                                                     Style="{StaticResource DataTextBlock}"/>
                                                 <TextBlock
-                                                    Text="РУБЛЕЙ"
+                                                    Text="₽"
                                                     Style="{StaticResource DataTextBlock}"/>
                                             </StackPanel>
                                         </Grid>
@@ -92,5 +74,39 @@
                 </ListBox.ItemTemplate>
             </ListBox>
         </Border>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+        <Button
+            Margin="0 0 10 0"
+            Width="260"
+            Content="ДОБАВИТЬ"
+            x:Name="NewHaircutButton"
+            Click="HaircutButton_Click"/>
+        <Button
+            Visibility="Collapsed"
+            Margin="10 0 0 0"
+            Width="165"
+            Content="УДАЛИТЬ"
+            x:Name="DeliteHaircutButton"
+            Click="DeliteHaircutButton_Click"/>
+        </StackPanel>
+        <StackPanel Visibility="Collapsed" x:Name="HaircutStackPanel" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 10 0 0">
+            <Border
+                BorderThickness="1" 
+                BorderBrush="#66FCF1"
+                Margin="10"
+                Width="320"
+                Height="Auto">
+                <StackPanel Margin="0 10 0 0" VerticalAlignment="Top" HorizontalAlignment="Center">
+                    <TextBlock 
+                        Text="СТРИЖКА" 
+                        FontSize="30"
+                        Style="{StaticResource StyleTextBlock}"
+                        Margin="0 10 0 0"/>
+                    <StackPanel Margin="0 10 0 10">
+                        <Frame Name="HaircutFrame"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
     </Grid>
 </Page>

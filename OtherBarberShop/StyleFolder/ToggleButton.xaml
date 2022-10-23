@@ -9,8 +9,8 @@
         <Setter Property="Height" Value="40"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#45A29E"/>
-        <Setter Property="Foreground" Value="#C5C6C7"/>
+        <Setter Property="Background" Value="#45A29E"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+        <Setter Property="Foreground" Value="#C5C6C7"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -24,14 +24,14 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="#66FCF1"/>
-                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#66FCF1"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            <Setter Property="Foreground" Value="White"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="#66FCF1"/>
+                            <Setter Property="Background" Value="#66FCF1"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                             <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderBrush" Value="White"/>
+                            <Setter Property="Foreground" Value="White"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            <Setter Property="BorderBrush" Value="White"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                             <Setter Property="BorderThickness" Value="1"/>
                         </Trigger>
                     </ControlTemplate.Triggers>

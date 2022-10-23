@@ -17,7 +17,7 @@
             <PropertyRef Name="NameHaircut" />
           </Key>
           <Property Name="NameHaircut" Type="nvarchar" MaxLength="200" Nullable="false" />
-          <Property Name="PriceHaircut" Type="decimal" Precision="5" Scale="0" />
+          <Property Name="PriceHaircut" Type="decimal" Precision="5" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="ImageWorkerTable">
           <Key>
@@ -148,7 +148,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WorkerTable_ImageWorkerTable">
+        <Association Name="FK_WorkerTable_ImageWorkerTable1">
           <End Role="ImageWorkerTable" Type="Self.ImageWorkerTable" Multiplicity="0..1" />
           <End Role="WorkerTable" Type="Self.WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
@@ -259,7 +259,7 @@
             <End Role="WorkerTable" EntitySet="WorkerTable" />
             <End Role="RecordTable" EntitySet="RecordTable" />
           </AssociationSet>
-          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable" Association="Self.FK_WorkerTable_ImageWorkerTable">
+          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable1" Association="Self.FK_WorkerTable_ImageWorkerTable1">
             <End Role="ImageWorkerTable" EntitySet="ImageWorkerTable" />
             <End Role="WorkerTable" EntitySet="WorkerTable" />
           </AssociationSet>
@@ -326,7 +326,7 @@
             <End Role="HaircutTable" EntitySet="HaircutTable" />
             <End Role="RecordTable" EntitySet="RecordTable" />
           </AssociationSet>
-          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable" Association="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable">
+          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable1" Association="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable1">
             <End Role="ImageWorkerTable" EntitySet="ImageWorkerTable" />
             <End Role="WorkerTable" EntitySet="WorkerTable" />
           </AssociationSet>
@@ -367,7 +367,7 @@
             <PropertyRef Name="NameHaircut" />
           </Key>
           <Property Name="NameHaircut" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="PriceHaircut" Type="Decimal" Precision="5" Scale="0" />
+          <Property Name="PriceHaircut" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
           <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable" FromRole="HaircutTable" ToRole="RecordTable" />
         </EntityType>
         <EntityType Name="ImageWorkerTable">
@@ -376,7 +376,7 @@
           </Key>
           <Property Name="NameImageWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CodImage" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable" FromRole="ImageWorkerTable" ToRole="WorkerTable" />
+          <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable1" FromRole="ImageWorkerTable" ToRole="WorkerTable" />
         </EntityType>
         <EntityType Name="PaulTable">
           <Key>
@@ -429,7 +429,7 @@
           <Property Name="LoginWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PasswordWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PaulWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ImageWorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable" FromRole="WorkerTable" ToRole="ImageWorkerTable" />
+          <NavigationProperty Name="ImageWorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable1" FromRole="WorkerTable" ToRole="ImageWorkerTable" />
           <NavigationProperty Name="PaulTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_PaulTable" FromRole="WorkerTable" ToRole="PaulTable" />
           <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_WorkerTable" FromRole="WorkerTable" ToRole="RecordTable" />
           <NavigationProperty Name="RoleTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_RoleTable" FromRole="WorkerTable" ToRole="RoleTable" />
@@ -491,7 +491,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WorkerTable_ImageWorkerTable">
+        <Association Name="FK_WorkerTable_ImageWorkerTable1">
           <End Type="OtherBarberShopDataBaseModel.ImageWorkerTable" Role="ImageWorkerTable" Multiplicity="0..1" />
           <End Type="OtherBarberShopDataBaseModel.WorkerTable" Role="WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>

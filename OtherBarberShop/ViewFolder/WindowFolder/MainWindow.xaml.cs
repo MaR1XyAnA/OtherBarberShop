@@ -22,14 +22,16 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
             }
         }
 
-        private void CloseButton_Click(object sender, RoutedEventArgs e) // Для того, что бы закрыть окно
-        {
-            Application.Current.Shutdown();
-        }
-
         private void RollUpButton_Click(object sender, RoutedEventArgs e) // Для того, чтобы свернуть окно
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e) // Для того, что бы закрыть окно
+        {
+            AutorizationWindows autorizationWindows = new AutorizationWindows();
+            autorizationWindows.Show();
+            this.Close();
         }
         #endregion
         private void ServeseButton_Click(object sender, RoutedEventArgs e)

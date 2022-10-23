@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="TextBlock" x:Key="StyleTextBlock">
         <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Foreground" Value="#66FCF1"/>
+        <Setter Property="Foreground" Value="#66FCF1"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Bahnschrift"/>
@@ -13,7 +13,7 @@
     </Style>
     <Style x:Key="DataTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
         <Setter Property="FontSize" Value="17"/>
-        <Setter Property="Foreground" Value="#C5C6C7"/>
+        <Setter Property="Foreground" Value="#C5C6C7"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
     <Style x:Key="FilterText" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">

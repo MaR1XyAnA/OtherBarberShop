@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.WindowFolder"
         mc:Ignorable="d"
-        Title="ГЛАВНОЕ ОКНО" 
         Height="700"
         Width="1200"
+        Title="ГЛАВНОЕ ОКНО"
         WindowStartupLocation="CenterScreen"
         Style="{StaticResource WindowsStyle}">
     <Grid Style="{StaticResource ColorGrid}">

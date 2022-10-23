@@ -8,8 +8,8 @@
         <Setter Property="Height" Value="40"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Background" Value="#45A29E"/>
-        <Setter Property="Foreground" Value="#C5C6C7"/>
+        <Setter Property="Background" Value="#45A29E"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+        <Setter Property="Foreground" Value="#C5C6C7"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -22,13 +22,13 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter Property="Background" Value="#66FCF1"/>
-                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="Background" Value="#66FCF1"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            <Setter Property="Foreground" Value="White"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#66FCF1"/>
-                            <Setter Property="Foreground" Value="White"/>
-                            <Setter Property="BorderBrush" Value="#1F2833"/>
+                            <Setter Property="Background" Value="#66FCF1"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            <Setter Property="Foreground" Value="White"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
+                            <Setter Property="BorderBrush" Value="#1F2833"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЕМНЫЙ ЦВЕТ-->
                             <Setter Property="BorderThickness" Value="1"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -40,7 +40,7 @@
         <Setter Property="Height" Value="30"/>
         <Setter Property="Width" Value="50"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#C5C6C7"/>
+        <Setter Property="Foreground" Value="#C5C6C7"/> <!--НЕ ТРОГАТЬ-->
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="FontFamily" Value="Bahnschrift"/>
         <Setter Property="Template">
@@ -54,10 +54,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#33969696"/>
-                            <Setter Property="Foreground" Value="#fff"/>
-                            <Setter Property="BorderBrush" Value="#33969696"/>
-                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Background" Value="#33969696"/> <!--НЕ ТРОГАТЬ-->
+                            <Setter Property="Foreground" Value="#fff"/> <!--НЕ ТРОГАТЬ-->
+                            <Setter Property="BorderBrush" Value="#33969696"/> <!--НЕ ТРОГАТЬ-->
+                            <Setter Property="BorderThickness" Value="1"/> <!--НЕ ТРОГАТЬ-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -76,10 +76,10 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#ff003c"/>
-                            <Setter Property="BorderBrush" Value="Red"/>
-                            <Setter Property="BorderThickness" Value="1"/>
-                            <Setter Property="Foreground" Value="#fff"/>
+                            <Setter Property="Background" Value="#ff003c"/> <!--НЕ ТРОГАТЬ-->
+                            <Setter Property="BorderBrush" Value="Red"/> <!--НЕ ТРОГАТЬ-->
+                            <Setter Property="BorderThickness" Value="1"/> <!--НЕ ТРОГАТЬ-->
+                            <Setter Property="Foreground" Value="#fff"/> <!--НЕ ТРОГАТЬ-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
