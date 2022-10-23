@@ -20,6 +20,8 @@
                 <ResourceDictionary Source="\StyleFolder\ComboBox.xaml"/>
                 <ResourceDictionary Source="\StyleFolder\ScrollBar.xaml"/>
                 <ResourceDictionary Source="\StyleFolder\ListBox.xaml"/>
+                <ResourceDictionary Source="\StyleFolder\Border.xaml"/>
+                <ResourceDictionary Source="\StyleFolder\Image.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

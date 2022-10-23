@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.PageFolder"
       mc:Ignorable="d"  
+      Title="СПИСОК ЗАПИСАННЫХ КЛИЕНТОВ"
       Style="{StaticResource PageMunu}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -122,6 +123,9 @@
                         Text="Парихмахер"
                         Style="{StaticResource FilterText}"/>
                     <ComboBox
+                        FontSize="18"
+                        x:Name="HairdresserComboBox"
+                        DisplayMemberPath="SurnameWorker"
                         Height="40"
                         Width="300"/>
                 </StackPanel>
@@ -130,6 +134,9 @@
                         Text="Стрижка"
                         Style="{StaticResource FilterText}"/>
                     <ComboBox
+                        FontSize="18"
+                        DisplayMemberPath="NameHaircut"
+                        x:Name="HaircutComboBox"
                         Height="40"
                         Width="300"/>
                 </StackPanel>
@@ -138,6 +145,9 @@
                         Text="День"
                         Style="{StaticResource FilterText}"/>
                     <ComboBox
+                        FontSize="18"
+                        x:Name="DayComboBox"
+                        DisplayMemberPath="DateRecord"
                         Height="40"
                         Width="300"/>
                 </StackPanel>
@@ -146,6 +156,9 @@
                         Text="Время"
                         Style="{StaticResource FilterText}"/>
                     <ComboBox
+                        FontSize="18"
+                        x:Name="TimrComboBox"
+                        DisplayMemberPath="TimeRecord"
                         Height="40"
                         Width="300"/>
                 </StackPanel>

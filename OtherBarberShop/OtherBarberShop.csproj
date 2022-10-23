@@ -72,6 +72,15 @@
     <Compile Include="ModelFolder\ClientTabel.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ModelFolder\FilterDate.cs">
+      <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFolder\FilterHairdresser.cs">
+      <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFolder\FilterTime.cs">
+      <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelFolder\HaircutTable.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
     </Compile>
@@ -93,10 +102,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OtherBarberShopDataBaseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ModelFolder\PaulTable.cs">
+      <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ModelFolder\RecordTable.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelFolder\RoleTable.cs">
+      <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFolder\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelFolder\sp_helpdiagrams_Result.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ModelFolder\sysdiagrams.cs">
@@ -104,6 +122,12 @@
     </Compile>
     <Compile Include="ModelFolder\WorkerTable.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFolder\PageFolder\InformationWorkerPage.xaml.cs">
+      <DependentUpon>InformationWorkerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFolder\PageFolder\ListShopButtonPage.xaml.cs">
+      <DependentUpon>ListShopButtonPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewFolder\PageFolder\RecordPage.xaml.cs">
       <DependentUpon>RecordPage.xaml</DependentUpon>
@@ -113,9 +137,6 @@
     </Compile>
     <Compile Include="ViewFolder\WindowFolder\AutorizationWindows.xaml.cs">
       <DependentUpon>AutorizationWindows.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewFolder\WindowFolder\ListWorkerWindow.xaml.cs">
-      <DependentUpon>ListWorkerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewFolder\WindowFolder\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -156,6 +177,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="StyleFolder\Border.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StyleFolder\Button.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StyleFolder\Grid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StyleFolder\Image.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,6 +237,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewFolder\PageFolder\InformationWorkerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewFolder\PageFolder\ListShopButtonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewFolder\PageFolder\RecordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -217,10 +254,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewFolder\WindowFolder\AutorizationWindows.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ViewFolder\WindowFolder\ListWorkerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,6 +274,7 @@
       <DependentUpon>OtherBarberShopDataBaseModel.edmx</DependentUpon>
       <LastGenOutput>OtherBarberShopDataBaseModel.cs</LastGenOutput>
     </Content>
+    <SplashScreen Include="ResourcesFolder\Icons\SplashScreenOtherBarberShop.png" />
     <Resource Include="ResourcesFolder\Icons\OtherBarberShopIcons.png" />
   </ItemGroup>
   <ItemGroup>

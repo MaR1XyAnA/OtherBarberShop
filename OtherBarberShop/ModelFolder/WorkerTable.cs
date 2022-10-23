@@ -28,8 +28,10 @@ namespace OtherBarberShop.ModelFolder
         public string ImageWorker { get; set; }
         public string LoginWorker { get; set; }
         public string PasswordWorker { get; set; }
+        public string PaulWorker { get; set; }
     
         public virtual ImageWorkerTable ImageWorkerTable { get; set; }
+        public virtual PaulTable PaulTable { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RecordTable> RecordTable { get; set; }
         public virtual RoleTable RoleTable { get; set; }

@@ -11,6 +11,10 @@ namespace OtherBarberShop.ViewFolder.PageFolder
             InitializeComponent();
             AppConnectModelClass.DataBase = new ModelFolder.OtherBarberShopDataBaseEntities();
             ListSessionsListBox.ItemsSource = AppConnectModelClass.DataBase.RecordTable.ToList();
+            HaircutComboBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
+            HairdresserComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterHairdresser.ToList();
+            DayComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterDate.ToList();
+            TimrComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterTime.ToList();
         }
     }
 }

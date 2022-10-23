@@ -3,6 +3,7 @@ using OtherBarberShop.ModelFolder;
 using OtherBarberShop.ViewFolder.WindowFolder;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,56 +24,43 @@ namespace OtherBarberShop.ViewFolder.PageFolder
         public WorkerPage()
         {
             InitializeComponent();
-            AppConnectModelClass.DataBase = new ModelFolder.OtherBarberShopDataBaseEntities();
+            AppConnectModelClass.DataBase = new OtherBarberShopDataBaseEntities();
+            ListWorkerListBox.ItemsSource = AppConnectModelClass.DataBase.WorkerTable.ToList();
+            ListWorkerListBox.Items.SortDescriptions.Add(new SortDescription("SurnameWorker", ListSortDirection.Ascending));
             RoleComboBox.ItemsSource = AppConnectModelClass.DataBase.RoleTable.ToList();
+            PaulComboBox.ItemsSource = AppConnectModelClass.DataBase.PaulTable.ToList();
         }
 
-        private void ListWorkerButton_Click(object sender, RoutedEventArgs e)
+        private void ListWorkerListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ListWorkerWindow listWorkerWindow = new ListWorkerWindow();
-            listWorkerWindow.Show();
+            StackPanelButtonControl.Visibility = Visibility.Visible;
+            FilterBorder.Visibility = Visibility.Visible;
+            InformationsBorder.Visibility = Visibility.Collapsed;
         }
 
-        private void NewWorkerButton_Click(object sender, RoutedEventArgs e)
+        private void EdditWorkerButton_Click(object sender, RoutedEventArgs e)
         {
-            if(AppConnectModelClass.DataBase.WorkerTable.Count(data => data.SurnameWorker == SurnameWorkerTextBox.Text && data.NameWorker == NameWorkerTextBox.Text)>0)
-            {
-                MessageBox.Show("Данный сотрудник уже сушествует");
-                return;
-            }
-            else
-            {
-                try
-                {
-                    WorkerTable workerTable = new WorkerTable()
-                    { 
-                        SurnameWorker = SurnameWorkerTextBox.Text,
-                        NameWorker = NameWorkerTextBox.Text,
-                        MiddlenameWorker = MiddlenameWorkerTextBox.Text,
-                        RoleWorker = RoleComboBox.Text,
-                        LoginWorker = LoginWorkerTextBox.Text,
-                        PasswordWorker = PasswordWorkerTextBox.Text,
-                        ImageWorker = null
-                    };
-                    AppConnectModelClass.DataBase.WorkerTable.Add(workerTable);
-                    AppConnectModelClass.DataBase.SaveChanges();
-                    MessageBox.Show("Данные успешно добавленны");
-                    Clear();
-                }
-                catch
-                {
-                    MessageBox.Show("Ошибка добавления");
-                }
-            }
+            WorkerTable workerTable = (WorkerTable)ListWorkerListBox.SelectedItem;
+            FilterBorder.Visibility=Visibility.Collapsed;
+            InformationsBorder.Visibility=Visibility.Visible;
+            StackPanelButtonControl.Visibility = Visibility.Collapsed;
+            InformationFrame.Navigate(new InformationWorkerPage(workerTable));
         }
-        private void Clear()
+
+        private void FeliteWorkerButton_Click(object sender, RoutedEventArgs e)
         {
-            SurnameWorkerTextBox.Text = null;
-            NameWorkerTextBox.Text = null;
-            MiddlenameWorkerTextBox.Text = null;
-            RoleComboBox.Text = null;
-            LoginWorkerTextBox.Text = null;
-            PasswordWorkerTextBox.Text = null;
+            StackPanelButtonControl.Visibility = Visibility.Collapsed;
+            if (MessageBox.Show(
+                "Вы действительно хотите удалить данного сотрудника?",
+                "Удаление",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                var DaliteWorker = ListWorkerListBox.SelectedItem as WorkerTable;
+                AppConnectModelClass.DataBase.WorkerTable.Remove(DaliteWorker);
+                AppConnectModelClass.DataBase.SaveChanges();
+                ListWorkerListBox.ItemsSource = AppConnectModelClass.DataBase.WorkerTable.ToList();
+            }
         }
     }
 }

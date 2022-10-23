@@ -39,6 +39,7 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
         <Setter Property="MinWidth" Value="120"/>
         <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Background" Value="#FF131A23"/>
         <Setter Property="Foreground" Value="#66FCF1"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -62,6 +63,7 @@
                             VerticalAlignment="Center"
                             HorizontalAlignment="Left" />
                         <TextBox 
+                            FontSize="20"
                             x:Name="PART_EditableTextBox"
                             Style="{x:Null}" 
                             Template="{StaticResource ComboBoxTextBox}" 

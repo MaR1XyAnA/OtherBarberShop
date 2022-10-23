@@ -12,15 +12,38 @@
         Style="{StaticResource WindowsStyle}">
     <Grid Style="{StaticResource ColorGrid}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
+        <Grid Background="Transparent" x:Name="SpaseBarGrid" MouseDown="SpaseBarGrid_MouseDown">
+            <Border Style="{StaticResource BorderControl}"/>
+            <StackPanel Style="{StaticResource StackPanelControl}" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Image Style="{StaticResource ImageControl}"/>
+                <TextBlock
+                    Margin="10 0 0 0"
+                    Text="ГЛАВНОЕ ОКНО"
+                    Style="{StaticResource StyleTextBlock}"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelControl}">
+                <Button
+                    x:Name="RollUpButton"
+                    Click="RollUpButton_Click"
+                    Content="—"
+                    Style="{StaticResource ButtonWindowControl}"/>
+                <Button
+                    x:Name="CloseButton"
+                    Click="CloseButton_Click"
+                    Content="✕"
+                    Style="{StaticResource CloseButtonWindowControl}"/>
+            </StackPanel>
+        </Grid>
         <Frame 
-            Grid.Row="0"  
+            Grid.Row="1"  
             x:Name="MainFrame"/>
         <StackPanel
             HorizontalAlignment="Center"
-            Grid.Row="1" 
+            Grid.Row="2" 
             Orientation="Horizontal">
             <ToggleButton
                 Margin="0 0 10 0"

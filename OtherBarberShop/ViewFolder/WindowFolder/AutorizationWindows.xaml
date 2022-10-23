@@ -10,7 +10,34 @@
         Style="{StaticResource WindowsStyle}"
         Height="300" Width="600">
     <Grid Style="{StaticResource ColorGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="Transparent" x:Name="SpaseBarGrid" MouseDown="SpaseBarGrid_MouseDown">
+            <Border Style="{StaticResource BorderControl}"/>
+            <StackPanel Style="{StaticResource StackPanelControl}" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Image Style="{StaticResource ImageControl}"/>
+                <TextBlock
+                    Margin="10 0 0 0"
+                    Text="АВТОРИЗАЦИЯ"
+                    Style="{StaticResource StyleTextBlock}"/>
+            </StackPanel>
+            <StackPanel Style="{StaticResource StackPanelControl}">
+                <Button
+                    x:Name="RollUpButton"
+                    Click="RollUpButton_Click"
+                    Content="—"
+                    Style="{StaticResource ButtonWindowControl}"/>
+                <Button
+                    x:Name="CloseButton"
+                    Click="CloseButton_Click"
+                    Content="✕"
+                    Style="{StaticResource CloseButtonWindowControl}"/>
+            </StackPanel>
+        </Grid>
         <StackPanel 
+            Grid.Row="1"
             Orientation="Vertical" 
             HorizontalAlignment="Center" 
             VerticalAlignment="Center">
