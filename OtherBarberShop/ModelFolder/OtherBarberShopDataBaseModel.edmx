@@ -71,7 +71,7 @@
           <Property Name="ImageWorker" Type="nvarchar" MaxLength="50" />
           <Property Name="LoginWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PasswordWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PaulWorker" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaulWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "OtherBarberShopDataBase.dbo.FilterDate" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -161,7 +161,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_WorkerTable_PaulTable">
-          <End Role="PaulTable" Type="Self.PaulTable" Multiplicity="0..1" />
+          <End Role="PaulTable" Type="Self.PaulTable" Multiplicity="1" />
           <End Role="WorkerTable" Type="Self.WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PaulTable">
@@ -428,7 +428,7 @@
           <Property Name="ImageWorker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LoginWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PasswordWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PaulWorker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaulWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ImageWorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable" FromRole="WorkerTable" ToRole="ImageWorkerTable" />
           <NavigationProperty Name="PaulTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_PaulTable" FromRole="WorkerTable" ToRole="PaulTable" />
           <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_WorkerTable" FromRole="WorkerTable" ToRole="RecordTable" />
@@ -504,7 +504,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_WorkerTable_PaulTable">
-          <End Type="OtherBarberShopDataBaseModel.PaulTable" Role="PaulTable" Multiplicity="0..1" />
+          <End Type="OtherBarberShopDataBaseModel.PaulTable" Role="PaulTable" Multiplicity="1" />
           <End Type="OtherBarberShopDataBaseModel.WorkerTable" Role="WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PaulTable">

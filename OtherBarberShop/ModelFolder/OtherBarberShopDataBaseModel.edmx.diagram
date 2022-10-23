@@ -7,10 +7,10 @@
       <Diagram DiagramId="c92995f2c8174b299e7a7bf907e07976" Name="Diagram1">
         <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ClientTabel" Width="1.5" PointX="3" PointY="5.75" />
         <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.HaircutTable" Width="1.5" PointX="3" PointY="8.125" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ImageWorkerTable" Width="1.5" PointX="0.75" PointY="4.875" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.PaulTable" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ImageWorkerTable" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.PaulTable" Width="1.5" PointX="0.75" PointY="5" />
         <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RecordTable" Width="1.5" PointX="5.25" PointY="1.375" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RoleTable" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RoleTable" Width="1.5" PointX="0.75" PointY="8.125" />
         <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" />
         <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.WorkerTable" Width="1.5" PointX="3" PointY="1" />
         <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.FilterDate" Width="1.5" PointX="7.75" PointY="0.75" />

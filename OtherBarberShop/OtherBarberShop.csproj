@@ -129,6 +129,9 @@
     <Compile Include="ViewFolder\PageFolder\ListShopButtonPage.xaml.cs">
       <DependentUpon>ListShopButtonPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewFolder\PageFolder\NewWorkerPage.xaml.cs">
+      <DependentUpon>NewWorkerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewFolder\PageFolder\RecordPage.xaml.cs">
       <DependentUpon>RecordPage.xaml</DependentUpon>
     </Compile>
@@ -242,6 +245,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewFolder\PageFolder\ListShopButtonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewFolder\PageFolder\NewWorkerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

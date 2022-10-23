@@ -36,12 +36,14 @@ namespace OtherBarberShop.ViewFolder.PageFolder
             StackPanelButtonControl.Visibility = Visibility.Visible;
             FilterBorder.Visibility = Visibility.Visible;
             InformationsBorder.Visibility = Visibility.Collapsed;
+            NewWorkerButton.Visibility = Visibility.Visible;
         }
 
         private void EdditWorkerButton_Click(object sender, RoutedEventArgs e)
         {
             WorkerTable workerTable = (WorkerTable)ListWorkerListBox.SelectedItem;
             FilterBorder.Visibility=Visibility.Collapsed;
+            NewWorkerButton.Visibility=Visibility.Collapsed;
             InformationsBorder.Visibility=Visibility.Visible;
             StackPanelButtonControl.Visibility = Visibility.Collapsed;
             InformationFrame.Navigate(new InformationWorkerPage(workerTable));
@@ -61,6 +63,15 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                 AppConnectModelClass.DataBase.SaveChanges();
                 ListWorkerListBox.ItemsSource = AppConnectModelClass.DataBase.WorkerTable.ToList();
             }
+        }
+
+        private void NewWorkerButton_Click(object sender, RoutedEventArgs e)
+        {
+            FilterBorder.Visibility = Visibility.Collapsed;
+            NewWorkerButton.Visibility = Visibility.Collapsed;
+            InformationsBorder.Visibility = Visibility.Visible;
+            StackPanelButtonControl.Visibility = Visibility.Collapsed;
+            InformationFrame.Navigate(new NewWorkerPage());
         }
     }
 }
