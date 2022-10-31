@@ -11,7 +11,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
         public AutorizationWindows()
         {
             InitializeComponent();
-            AppConnectModelClass.DataBase = new ModelFolder.OtherBarberShopDataBaseEntities();
+            AppConnectModelClass.DataBase = new ModelFolder.OtherBarberShopDataBaseEntities(); //Подключение БД к этому окну
         }
 
         #region Управление окном
@@ -30,11 +30,11 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
 
         private void RollUpButton_Click(object sender, RoutedEventArgs e) // Для того, чтобы свернуть окно
         {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
         #endregion
 
-        private void OpenWondow()
+        private void OpenWondow() // Метод для открытия окна
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
@@ -46,7 +46,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
             if (LoginTextBox.Text == "" && 
                 PasswordPasswordBox.Password == "" || 
                 LoginTextBox.Text == null && 
-                PasswordPasswordBox.Password == null)
+                PasswordPasswordBox.Password == null) // проверка полей на пустоту в 2-х вариациях
             {
                 MessageBox.Show(
                     "Поле ЛОГИН или поле ПАРОЛЬ пустое", 
@@ -60,8 +60,8 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
                 {
                     var user = AppConnectModelClass.DataBase.WorkerTable.FirstOrDefault(
                         data => data.LoginWorker == LoginTextBox.Text &&
-                                data.PasswordWorker == PasswordPasswordBox.Password);
-                    if (user == null)
+                                data.PasswordWorker == PasswordPasswordBox.Password); // Получение данных для работы
+                    if (user == null) // Если пользователя нет в БД
                     {
                         MessageBox.Show(
                             "Неправельный ЛОГИН или ПАРОЛЬ", 
@@ -73,11 +73,11 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
                     {
                         switch (user.RoleWorker)
                         {
-                            case "СА":
-                                OpenWondow();
+                            case "СА": // Если "Роль = СА" 
+                                OpenWondow(); // Метод для открытия окна
                                 break;
 
-                            default:
+                            default: // Всем остальным говорим, что нельзя
                                 MessageBox.Show(
                                     "Отказано в доступе", 
                                     "Ошибка доступа", 
@@ -87,7 +87,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception ex) // Метод, который проверяет на наличае ошибок в приложении с которыми пользователь может сталкнуться при входе
                 {
                     MessageBox.Show(
                         ex + "", 

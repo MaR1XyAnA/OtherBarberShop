@@ -129,6 +129,9 @@
     <Compile Include="ViewFolder\PageFolder\EdditHaircutPage.xaml.cs">
       <DependentUpon>EdditHaircutPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewFolder\PageFolder\EdditRecordPage.xaml.cs">
+      <DependentUpon>EdditRecordPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewFolder\PageFolder\InformationWorkerPage.xaml.cs">
       <DependentUpon>InformationWorkerPage.xaml</DependentUpon>
     </Compile>
@@ -251,6 +254,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewFolder\PageFolder\EdditHaircutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewFolder\PageFolder\EdditRecordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -32,7 +32,7 @@ namespace OtherBarberShop.ViewFolder.PageFolder
 
         private void EdditHaircutButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO: Сделать алгоритм, который изменит информацию в БД
         }
     }
 }

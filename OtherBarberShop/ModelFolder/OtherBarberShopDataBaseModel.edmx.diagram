@@ -5,17 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c92995f2c8174b299e7a7bf907e07976" Name="Diagram1">
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ClientTabel" Width="1.5" PointX="3" PointY="8.125" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.HaircutTable" Width="1.5" PointX="3" PointY="5.75" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ImageWorkerTable" Width="1.5" PointX="0.75" PointY="2" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.PaulTable" Width="1.5" PointX="0.75" PointY="8.125" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RecordTable" Width="1.5" PointX="5.25" PointY="1.375" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RoleTable" Width="1.5" PointX="0.75" PointY="5" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.WorkerTable" Width="1.5" PointX="3" PointY="1" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.FilterDate" Width="1.5" PointX="7.75" PointY="0.75" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.FilterHairdresser" Width="1.5" PointX="7.75" PointY="2.75" />
-        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.FilterTime" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ClientTabel" Width="1.5" PointX="3" PointY="6.625" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.HaircutTable" Width="1.5" PointX="3" PointY="9" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.ImageWorkerTable" Width="1.5" PointX="0.75" PointY="5.875" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.PaulTable" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RecordTable" Width="1.5" PointX="5.25" PointY="2.25" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.RoleTable" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="6.625" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.WorkerTable" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.FilterDate" Width="1.5" PointX="7.75" PointY="1.625" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.FilterHairdresser" Width="1.5" PointX="7.75" PointY="3.625" />
+        <EntityTypeShape EntityType="OtherBarberShopDataBaseModel.FilterTime" Width="1.5" PointX="7.75" PointY="7.625" />
         <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel" />
         <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable" />
         <AssociationConnector Association="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable1" />

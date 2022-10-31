@@ -1,0 +1,100 @@
+﻿<Page x:Class="OtherBarberShop.ViewFolder.PageFolder.EdditRecordPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.PageFolder"
+      mc:Ignorable="d" 
+      Width="320"
+      Height="400">
+    <ScrollViewer>
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Margin="0 10 0 5">
+            <TextBlock
+                Text="Парихмахер"
+                Style="{StaticResource FilterText}"/>
+            <!--TODO: Доработать ComboBox, чтоб в него выводилось ФИО парикхмахера-->
+            <ComboBox
+                FontSize="18"
+                Text="{Binding SurnameWorker}"
+                x:Name="HairdresserComboBox"
+                Height="40"
+                Width="300">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Style="{StaticResource DataTextBlock}"
+                                    Text="{Binding SurnameWorker}"/>
+                                <TextBlock
+                                    Margin="5 0 0 0"
+                                    Style="{StaticResource DataTextBlock}"
+                                    Text="{Binding NameWorker}"/>
+                                <TextBlock
+                                    Margin="5 0 0 0"
+                                    Style="{StaticResource DataTextBlock}"
+                                    Text="{Binding MiddlenameWorker}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </StackPanel>
+        <StackPanel Margin="0 10 0 5">
+            <TextBlock
+                Text="Клиент"
+                Style="{StaticResource FilterText}"/>
+            <TextBox
+                Text="{Binding ClientTabel.SurnameClient}"
+                Margin="0 0 0 5"
+                Style="{StaticResource TextBoxStyle}"
+                Height="40"
+                Width="300"/>
+            <TextBox
+                Text="{Binding ClientTabel.NameClient}"
+                Margin="0 5 0 0"
+                Style="{StaticResource TextBoxStyle}"
+                Height="40"
+                Width="300"/>
+            </StackPanel>
+        <StackPanel Margin="0 5 0 5">
+            <TextBlock
+                Text="Стрижка"
+                Style="{StaticResource FilterText}"/>
+            <ComboBox
+                Text="{Binding HaircutTable.NameHaircut}"
+                FontSize="18"
+                DisplayMemberPath="NameHaircut"
+                x:Name="HaircutComboBox"
+                Height="40"
+                Width="300"/>
+        </StackPanel>
+        <StackPanel Margin="0 5 0 5">
+            <TextBlock
+                Text="День"
+                Style="{StaticResource FilterText}"/>
+            <TextBox
+                Text="{Binding DateRecord, StringFormat='{}{0:dd*MM*yyyy}'}"
+                Style="{StaticResource TextBoxStyle}"
+                Height="40"
+                Width="300"/>
+        </StackPanel>
+        <StackPanel Margin="0 5 0 5">
+            <TextBlock
+                Text="Время"
+                Style="{StaticResource FilterText}"/>
+            <TextBox
+                Text="{Binding TimeRecord, StringFormat={}{0:hh}:{0:mm}}"
+                Style="{StaticResource TextBoxStyle}"
+                Height="40"
+                Width="300"/>
+        </StackPanel>
+        <StackPanel Margin="0 5 0 70" HorizontalAlignment="Center">
+            <Button
+                x:Name="SaveButton"
+                Click="SaveButton_Click"
+                Content="СОХРАНИТЬ"
+                Width="200"/>
+        </StackPanel>
+    </StackPanel>
+    </ScrollViewer>
+</Page>

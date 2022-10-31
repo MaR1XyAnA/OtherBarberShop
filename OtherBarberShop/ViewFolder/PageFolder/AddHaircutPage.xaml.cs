@@ -14,7 +14,7 @@ namespace OtherBarberShop.ViewFolder.PageFolder
             InitializeComponent();
         }
 
-        private void ClearText()
+        private void ClearText() // Метод для очистки текстовых полей
         {
             NameHaircutTextBox.Text = "";
             PriceHaircutTextBox.Text = "";
@@ -24,10 +24,10 @@ namespace OtherBarberShop.ViewFolder.PageFolder
         {
             if (
                 NameHaircutTextBox.Text != "" &&
-                PriceHaircutTextBox.Text != "")
+                PriceHaircutTextBox.Text != "") // Проверка текстовых полей на пустоту
             {
                 if (AppConnectModelClass.DataBase.HaircutTable.Count(
-                    data => data.NameHaircut == NameHaircutTextBox.Text) > 0)
+                    data => data.NameHaircut == NameHaircutTextBox.Text) > 0) // Проверка на уже существующие такие данные в БД
                 {
                     MessageBox.Show(
                         "Данная причёска уже существует",
@@ -38,21 +38,21 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                 }
                 else
                 {
-                    decimal Price = Convert.ToDecimal(PriceHaircutTextBox.Text);
+                    decimal Price = Convert.ToDecimal(PriceHaircutTextBox.Text); // Конверт из типа string в тип decimal
                     HaircutTable haircutTable = new HaircutTable()
                     {
                         NameHaircut = NameHaircutTextBox.Text,
                         PriceHaircut = Price
                     };
-                    AppConnectModelClass.DataBase.HaircutTable.Add(haircutTable);
-                    AppConnectModelClass.DataBase.SaveChanges();
+                    AppConnectModelClass.DataBase.HaircutTable.Add(haircutTable); // Запись в БД
+                    AppConnectModelClass.DataBase.SaveChanges(); // Сохранение изменений в БД
                     MessageBox.Show(
                         "Новая причёска успешно добавленна",
                         "Уведомление",
                         MessageBoxButton.OK,
                         MessageBoxImage.Information);
-                    ClearText();
-                    AddHaircutButton.Visibility = Visibility.Visible;
+                    ClearText(); // Вызываем метод очистки полей
+                    AddHaircutButton.Visibility = Visibility.Visible; // Делаем кнопку "AddHaircutButton" активной
                 }
             }
         }

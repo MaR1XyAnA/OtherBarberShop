@@ -10,7 +10,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
         {
             InitializeComponent();
             MainFrame.Navigate(new WorkerPage());
-            WorkerButton.IsChecked = true;
+            WorkerButton.IsChecked = true; // Делаем кнопку "WorkerButton" активной
         }
 
         #region Управление окном
@@ -24,7 +24,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
 
         private void RollUpButton_Click(object sender, RoutedEventArgs e) // Для того, чтобы свернуть окно
         {
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e) // Для того, что бы закрыть окно
@@ -36,23 +36,26 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
         #endregion
         private void ServeseButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new ListShopButtonPage());
-            WorkerButton.IsChecked = false;
-            RecordButton.IsChecked = false;
+            ServeseButton.IsChecked = true;
+            MainFrame.Navigate(new ListShopButtonPage()); // Отурываем в окне страницу "ListShopButtonPage"
+            WorkerButton.IsChecked = false; // Деактивируем кнопку "WorkerButton" при нажатии кнопки "ServeseButton"
+            RecordButton.IsChecked = false; // Деактивируем кнопку "RecordButton" при нажатии кнопки "ServeseButton"
         }
 
         private void RecordButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new RecordPage());
-            WorkerButton.IsChecked = false;
-            ServeseButton.IsChecked = false;
+            RecordButton.IsChecked = true;
+            MainFrame.Navigate(new RecordPage()); // Отурываем в окне страницу "RecordPage"
+            WorkerButton.IsChecked = false; // Деактивируем кнопку "WorkerButton" при нажатии кнопки "RecordButton"
+            ServeseButton.IsChecked = false; // Деактивируем кнопку "ServeseButton" при нажатии кнопки "RecordButton"
         }
 
         private void WorkerButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new WorkerPage());
-            RecordButton.IsChecked = false;
-            ServeseButton.IsChecked = false;
+            WorkerButton.IsChecked = true;
+            MainFrame.Navigate(new WorkerPage()); // Отурываем в окне страницу "WorkerPage"
+            RecordButton.IsChecked = false; // Деактивируем кнопку "RecordButton" при нажатии кнопки "WorkerButton"
+            ServeseButton.IsChecked = false; // Деактивируем кнопку "ServeseButton" при нажатии кнопки "WorkerButton"
         }
     }
 }

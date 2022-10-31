@@ -166,6 +166,7 @@
                 <StackPanel Margin="0 5 0 5" HorizontalAlignment="Center">
                     <Button
                         x:Name="FilterButton"
+                        Click="FilterButton_Click"
                         Content="ОТФИЛЬТРОВАТЬ"
                         Width="200"/>
                 </StackPanel>
