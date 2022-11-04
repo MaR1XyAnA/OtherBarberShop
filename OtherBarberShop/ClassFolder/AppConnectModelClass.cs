@@ -9,6 +9,14 @@ namespace OtherBarberShop.ClassFolder
 {
     internal class AppConnectModelClass
     {
-        public static OtherBarberShopDataBaseEntities DataBase;
+        private static OtherBarberShopDataBaseEntities _context;
+        public static OtherBarberShopDataBaseEntities DataBase()
+        {
+            if (_context == null)
+            {
+                _context = new OtherBarberShopDataBaseEntities();
+            }
+            return _context;
+        }
     }
 }

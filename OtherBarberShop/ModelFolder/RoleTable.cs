@@ -20,6 +20,7 @@ namespace OtherBarberShop.ModelFolder
             this.WorkerTable = new HashSet<WorkerTable>();
         }
     
+        public int PersonalNumberRole { get; set; }
         public string NameRole { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

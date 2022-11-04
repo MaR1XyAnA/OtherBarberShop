@@ -14,14 +14,14 @@ namespace OtherBarberShop.ModelFolder
     
     public partial class FilterHairdresser
     {
+        public string NameRole { get; set; }
+        public byte[] CodImage { get; set; }
+        public string NamePaul { get; set; }
         public int PersonalNumberWorker { get; set; }
         public string SurnameWorker { get; set; }
         public string NameWorker { get; set; }
         public string MiddlenameWorker { get; set; }
-        public string RoleWorker { get; set; }
-        public string ImageWorker { get; set; }
         public string LoginWorker { get; set; }
         public string PasswordWorker { get; set; }
-        public string NameRole { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace OtherBarberShop.ViewFolder.PageFolder
 
         private void List()
         {
-            ListShopButtonListBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
+            ListShopButtonListBox.ItemsSource = AppConnectModelClass.DataBase().HaircutTable.ToList();
         }
 
         private void HaircutButton_Click(object sender, RoutedEventArgs e)
@@ -46,9 +46,9 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 var DaliteHaircut = ListShopButtonListBox.SelectedItem as HaircutTable;
-                AppConnectModelClass.DataBase.HaircutTable.Remove(DaliteHaircut);
-                AppConnectModelClass.DataBase.SaveChanges();
-                ListShopButtonListBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
+                AppConnectModelClass.DataBase().HaircutTable.Remove(DaliteHaircut);
+                AppConnectModelClass.DataBase().SaveChanges();
+                ListShopButtonListBox.ItemsSource = AppConnectModelClass.DataBase().HaircutTable.ToList();
                 DeliteHaircutButton.Visibility = Visibility.Collapsed;
             }
         }

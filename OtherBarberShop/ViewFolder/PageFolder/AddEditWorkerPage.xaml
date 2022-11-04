@@ -1,4 +1,4 @@
-﻿<Page x:Class="OtherBarberShop.ViewFolder.PageFolder.InformationWorkerPage"
+﻿<Page x:Class="OtherBarberShop.ViewFolder.PageFolder.AddEditWorkerPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -51,7 +51,7 @@
                         Text="Роль"
                         Style="{StaticResource FilterText}"/>
                     <ComboBox
-                        Text="{Binding RoleWorker}"
+                        Text="{Binding RoleTable.NameRole}"
                         x:Name="RoleInformationsComboBox"
                         FontSize="18"
                         DisplayMemberPath="NameRole"
@@ -84,7 +84,7 @@
                         Style="{StaticResource FilterText}"/>
                     <ComboBox
                         FontSize="18"
-                        Text="{Binding PaulWorker}"
+                        Text="{Binding PaulTable.NamePaul}"
                         x:Name="PaulInformationsComboBox"
                         DisplayMemberPath="NamePaul"
                         Height="40"

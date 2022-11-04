@@ -20,6 +20,7 @@ namespace OtherBarberShop.ModelFolder
             this.RecordTable = new HashSet<RecordTable>();
         }
     
+        public int PersonalNumberClient { get; set; }
         public string SurnameClient { get; set; }
         public string NameClient { get; set; }
     

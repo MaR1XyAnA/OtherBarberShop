@@ -7,29 +7,33 @@
     <Schema Namespace="Хранилище OtherBarberShopDataBaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ClientTabel">
           <Key>
-            <PropertyRef Name="SurnameClient" />
+            <PropertyRef Name="PersonalNumberClient" />
           </Key>
+          <Property Name="PersonalNumberClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="SurnameClient" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NameClient" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="HaircutTable">
           <Key>
-            <PropertyRef Name="NameHaircut" />
+            <PropertyRef Name="PersonalNumberHaircut" />
           </Key>
+          <Property Name="PersonalNumberHaircut" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameHaircut" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="PriceHaircut" Type="decimal" Precision="5" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="ImageWorkerTable">
           <Key>
-            <PropertyRef Name="NameImageWorker" />
+            <PropertyRef Name="PersonalNumberImage" />
           </Key>
+          <Property Name="PersonalNumberImage" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameImageWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CodImage" Type="image" Nullable="false" />
         </EntityType>
         <EntityType Name="PaulTable">
           <Key>
-            <PropertyRef Name="NamePaul" />
+            <PropertyRef Name="PersonalNumberPaul" />
           </Key>
+          <Property Name="PersonalNumberPaul" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NamePaul" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="RecordTable">
@@ -37,16 +41,17 @@
             <PropertyRef Name="PersonalNumberRecord" />
           </Key>
           <Property Name="PersonalNumberRecord" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PNWorker" Type="int" Nullable="false" />
-          <Property Name="PNClient" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PNHaircut" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PNWorkerRecord" Type="int" Nullable="false" />
+          <Property Name="PNClientRecord" Type="int" Nullable="false" />
+          <Property Name="PNHaircutRecord" Type="int" Nullable="false" />
           <Property Name="DateRecord" Type="date" Nullable="false" />
           <Property Name="TimeRecord" Type="time" Precision="0" Nullable="false" />
         </EntityType>
         <EntityType Name="RoleTable">
           <Key>
-            <PropertyRef Name="NameRole" />
+            <PropertyRef Name="PersonalNumberRole" />
           </Key>
+          <Property Name="PersonalNumberRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameRole" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -67,11 +72,11 @@
           <Property Name="SurnameWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NameWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MiddlenameWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="RoleWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ImageWorker" Type="nvarchar" MaxLength="50" />
+          <Property Name="PNRoleWorker" Type="int" Nullable="false" />
+          <Property Name="PNImageWorker" Type="int" Nullable="false" />
           <Property Name="LoginWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PasswordWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="PaulWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PNPaulWorker" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "OtherBarberShopDataBase.dbo.FilterDate" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -85,24 +90,25 @@
 предупреждение 6002: В таблице или представлении "OtherBarberShopDataBase.dbo.FilterHairdresser" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="FilterHairdresser">
           <Key>
+            <PropertyRef Name="NameRole" />
+            <PropertyRef Name="CodImage" />
+            <PropertyRef Name="NamePaul" />
             <PropertyRef Name="PersonalNumberWorker" />
             <PropertyRef Name="SurnameWorker" />
             <PropertyRef Name="NameWorker" />
             <PropertyRef Name="MiddlenameWorker" />
-            <PropertyRef Name="RoleWorker" />
             <PropertyRef Name="LoginWorker" />
             <PropertyRef Name="PasswordWorker" />
-            <PropertyRef Name="NameRole" />
           </Key>
+          <Property Name="NameRole" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodImage" Type="image" Nullable="false" />
+          <Property Name="NamePaul" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PersonalNumberWorker" Type="int" Nullable="false" />
           <Property Name="SurnameWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NameWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="MiddlenameWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="RoleWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="ImageWorker" Type="nvarchar" MaxLength="50" />
           <Property Name="LoginWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PasswordWorker" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="NameRole" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "OtherBarberShopDataBase.dbo.FilterTime" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -117,10 +123,10 @@
           <End Role="RecordTable" Type="Self.RecordTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ClientTabel">
-              <PropertyRef Name="SurnameClient" />
+              <PropertyRef Name="PersonalNumberClient" />
             </Principal>
             <Dependent Role="RecordTable">
-              <PropertyRef Name="PNClient" />
+              <PropertyRef Name="PNClientRecord" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -129,10 +135,10 @@
           <End Role="RecordTable" Type="Self.RecordTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HaircutTable">
-              <PropertyRef Name="NameHaircut" />
+              <PropertyRef Name="PersonalNumberHaircut" />
             </Principal>
             <Dependent Role="RecordTable">
-              <PropertyRef Name="PNHaircut" />
+              <PropertyRef Name="PNHaircutRecord" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -144,19 +150,19 @@
               <PropertyRef Name="PersonalNumberWorker" />
             </Principal>
             <Dependent Role="RecordTable">
-              <PropertyRef Name="PNWorker" />
+              <PropertyRef Name="PNWorkerRecord" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WorkerTable_ImageWorkerTable1">
-          <End Role="ImageWorkerTable" Type="Self.ImageWorkerTable" Multiplicity="0..1" />
+        <Association Name="FK_WorkerTable_ImageWorkerTable">
+          <End Role="ImageWorkerTable" Type="Self.ImageWorkerTable" Multiplicity="1" />
           <End Role="WorkerTable" Type="Self.WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ImageWorkerTable">
-              <PropertyRef Name="NameImageWorker" />
+              <PropertyRef Name="PersonalNumberImage" />
             </Principal>
             <Dependent Role="WorkerTable">
-              <PropertyRef Name="ImageWorker" />
+              <PropertyRef Name="PNImageWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -165,10 +171,10 @@
           <End Role="WorkerTable" Type="Self.WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PaulTable">
-              <PropertyRef Name="NamePaul" />
+              <PropertyRef Name="PersonalNumberPaul" />
             </Principal>
             <Dependent Role="WorkerTable">
-              <PropertyRef Name="PaulWorker" />
+              <PropertyRef Name="PNPaulWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -177,10 +183,10 @@
           <End Role="WorkerTable" Type="Self.WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RoleTable">
-              <PropertyRef Name="NameRole" />
+              <PropertyRef Name="PersonalNumberRole" />
             </Principal>
             <Dependent Role="WorkerTable">
-              <PropertyRef Name="RoleWorker" />
+              <PropertyRef Name="PNRoleWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -231,15 +237,15 @@
           </EntitySet>
           <EntitySet Name="FilterHairdresser" EntityType="Self.FilterHairdresser" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [FilterHairdresser].[NameRole] AS [NameRole], 
+    [FilterHairdresser].[CodImage] AS [CodImage], 
+    [FilterHairdresser].[NamePaul] AS [NamePaul], 
     [FilterHairdresser].[PersonalNumberWorker] AS [PersonalNumberWorker], 
     [FilterHairdresser].[SurnameWorker] AS [SurnameWorker], 
     [FilterHairdresser].[NameWorker] AS [NameWorker], 
     [FilterHairdresser].[MiddlenameWorker] AS [MiddlenameWorker], 
-    [FilterHairdresser].[RoleWorker] AS [RoleWorker], 
-    [FilterHairdresser].[ImageWorker] AS [ImageWorker], 
     [FilterHairdresser].[LoginWorker] AS [LoginWorker], 
-    [FilterHairdresser].[PasswordWorker] AS [PasswordWorker], 
-    [FilterHairdresser].[NameRole] AS [NameRole]
+    [FilterHairdresser].[PasswordWorker] AS [PasswordWorker]
     FROM [dbo].[FilterHairdresser] AS [FilterHairdresser]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="FilterTime" EntityType="Self.FilterTime" store:Type="Views" store:Schema="dbo">
@@ -259,7 +265,7 @@
             <End Role="WorkerTable" EntitySet="WorkerTable" />
             <End Role="RecordTable" EntitySet="RecordTable" />
           </AssociationSet>
-          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable1" Association="Self.FK_WorkerTable_ImageWorkerTable1">
+          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable" Association="Self.FK_WorkerTable_ImageWorkerTable">
             <End Role="ImageWorkerTable" EntitySet="ImageWorkerTable" />
             <End Role="WorkerTable" EntitySet="WorkerTable" />
           </AssociationSet>
@@ -326,7 +332,7 @@
             <End Role="HaircutTable" EntitySet="HaircutTable" />
             <End Role="RecordTable" EntitySet="RecordTable" />
           </AssociationSet>
-          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable1" Association="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable1">
+          <AssociationSet Name="FK_WorkerTable_ImageWorkerTable" Association="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable">
             <End Role="ImageWorkerTable" EntitySet="ImageWorkerTable" />
             <End Role="WorkerTable" EntitySet="WorkerTable" />
           </AssociationSet>
@@ -356,32 +362,36 @@
         </ComplexType>
         <EntityType Name="ClientTabel">
           <Key>
-            <PropertyRef Name="SurnameClient" />
+            <PropertyRef Name="PersonalNumberClient" />
           </Key>
+          <Property Name="PersonalNumberClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SurnameClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NameClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel" FromRole="ClientTabel" ToRole="RecordTable" />
         </EntityType>
         <EntityType Name="HaircutTable">
           <Key>
-            <PropertyRef Name="NameHaircut" />
+            <PropertyRef Name="PersonalNumberHaircut" />
           </Key>
+          <Property Name="PersonalNumberHaircut" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameHaircut" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="PriceHaircut" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
           <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable" FromRole="HaircutTable" ToRole="RecordTable" />
         </EntityType>
         <EntityType Name="ImageWorkerTable">
           <Key>
-            <PropertyRef Name="NameImageWorker" />
+            <PropertyRef Name="PersonalNumberImage" />
           </Key>
+          <Property Name="PersonalNumberImage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameImageWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CodImage" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable1" FromRole="ImageWorkerTable" ToRole="WorkerTable" />
+          <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable" FromRole="ImageWorkerTable" ToRole="WorkerTable" />
         </EntityType>
         <EntityType Name="PaulTable">
           <Key>
-            <PropertyRef Name="NamePaul" />
+            <PropertyRef Name="PersonalNumberPaul" />
           </Key>
+          <Property Name="PersonalNumberPaul" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NamePaul" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_PaulTable" FromRole="PaulTable" ToRole="WorkerTable" />
         </EntityType>
@@ -390,9 +400,9 @@
             <PropertyRef Name="PersonalNumberRecord" />
           </Key>
           <Property Name="PersonalNumberRecord" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PNWorker" Type="Int32" Nullable="false" />
-          <Property Name="PNClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PNHaircut" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PNWorkerRecord" Type="Int32" Nullable="false" />
+          <Property Name="PNClientRecord" Type="Int32" Nullable="false" />
+          <Property Name="PNHaircutRecord" Type="Int32" Nullable="false" />
           <Property Name="DateRecord" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TimeRecord" Type="Time" Nullable="false" Precision="0" />
           <NavigationProperty Name="ClientTabel" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel" FromRole="RecordTable" ToRole="ClientTabel" />
@@ -401,8 +411,9 @@
         </EntityType>
         <EntityType Name="RoleTable">
           <Key>
-            <PropertyRef Name="NameRole" />
+            <PropertyRef Name="PersonalNumberRole" />
           </Key>
+          <Property Name="PersonalNumberRole" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameRole" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_RoleTable" FromRole="RoleTable" ToRole="WorkerTable" />
         </EntityType>
@@ -424,12 +435,12 @@
           <Property Name="SurnameWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NameWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MiddlenameWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RoleWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ImageWorker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PNRoleWorker" Type="Int32" Nullable="false" />
+          <Property Name="PNImageWorker" Type="Int32" Nullable="false" />
           <Property Name="LoginWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PasswordWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PaulWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ImageWorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable1" FromRole="WorkerTable" ToRole="ImageWorkerTable" />
+          <Property Name="PNPaulWorker" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ImageWorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_ImageWorkerTable" FromRole="WorkerTable" ToRole="ImageWorkerTable" />
           <NavigationProperty Name="PaulTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_PaulTable" FromRole="WorkerTable" ToRole="PaulTable" />
           <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_WorkerTable" FromRole="WorkerTable" ToRole="RecordTable" />
           <NavigationProperty Name="RoleTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_RoleTable" FromRole="WorkerTable" ToRole="RoleTable" />
@@ -442,24 +453,25 @@
         </EntityType>
         <EntityType Name="FilterHairdresser">
           <Key>
+            <PropertyRef Name="NameRole" />
+            <PropertyRef Name="CodImage" />
+            <PropertyRef Name="NamePaul" />
             <PropertyRef Name="PersonalNumberWorker" />
             <PropertyRef Name="SurnameWorker" />
             <PropertyRef Name="NameWorker" />
             <PropertyRef Name="MiddlenameWorker" />
-            <PropertyRef Name="RoleWorker" />
             <PropertyRef Name="LoginWorker" />
             <PropertyRef Name="PasswordWorker" />
-            <PropertyRef Name="NameRole" />
           </Key>
+          <Property Name="NameRole" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CodImage" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="NamePaul" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PersonalNumberWorker" Type="Int32" Nullable="false" />
           <Property Name="SurnameWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NameWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MiddlenameWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="RoleWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ImageWorker" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="LoginWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PasswordWorker" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NameRole" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="FilterTime">
           <Key>
@@ -472,10 +484,10 @@
           <End Type="OtherBarberShopDataBaseModel.RecordTable" Role="RecordTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ClientTabel">
-              <PropertyRef Name="SurnameClient" />
+              <PropertyRef Name="PersonalNumberClient" />
             </Principal>
             <Dependent Role="RecordTable">
-              <PropertyRef Name="PNClient" />
+              <PropertyRef Name="PNClientRecord" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -484,22 +496,22 @@
           <End Type="OtherBarberShopDataBaseModel.RecordTable" Role="RecordTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HaircutTable">
-              <PropertyRef Name="NameHaircut" />
+              <PropertyRef Name="PersonalNumberHaircut" />
             </Principal>
             <Dependent Role="RecordTable">
-              <PropertyRef Name="PNHaircut" />
+              <PropertyRef Name="PNHaircutRecord" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_WorkerTable_ImageWorkerTable1">
-          <End Type="OtherBarberShopDataBaseModel.ImageWorkerTable" Role="ImageWorkerTable" Multiplicity="0..1" />
+        <Association Name="FK_WorkerTable_ImageWorkerTable">
+          <End Type="OtherBarberShopDataBaseModel.ImageWorkerTable" Role="ImageWorkerTable" Multiplicity="1" />
           <End Type="OtherBarberShopDataBaseModel.WorkerTable" Role="WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ImageWorkerTable">
-              <PropertyRef Name="NameImageWorker" />
+              <PropertyRef Name="PersonalNumberImage" />
             </Principal>
             <Dependent Role="WorkerTable">
-              <PropertyRef Name="ImageWorker" />
+              <PropertyRef Name="PNImageWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -508,10 +520,10 @@
           <End Type="OtherBarberShopDataBaseModel.WorkerTable" Role="WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="PaulTable">
-              <PropertyRef Name="NamePaul" />
+              <PropertyRef Name="PersonalNumberPaul" />
             </Principal>
             <Dependent Role="WorkerTable">
-              <PropertyRef Name="PaulWorker" />
+              <PropertyRef Name="PNPaulWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -523,7 +535,7 @@
               <PropertyRef Name="PersonalNumberWorker" />
             </Principal>
             <Dependent Role="RecordTable">
-              <PropertyRef Name="PNWorker" />
+              <PropertyRef Name="PNWorkerRecord" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -532,10 +544,10 @@
           <End Type="OtherBarberShopDataBaseModel.WorkerTable" Role="WorkerTable" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="RoleTable">
-              <PropertyRef Name="NameRole" />
+              <PropertyRef Name="PersonalNumberRole" />
             </Principal>
             <Dependent Role="WorkerTable">
-              <PropertyRef Name="RoleWorker" />
+              <PropertyRef Name="PNRoleWorker" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -574,6 +586,7 @@
               <MappingFragment StoreEntitySet="ClientTabel">
                 <ScalarProperty Name="NameClient" ColumnName="NameClient" />
                 <ScalarProperty Name="SurnameClient" ColumnName="SurnameClient" />
+                <ScalarProperty Name="PersonalNumberClient" ColumnName="PersonalNumberClient" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -582,6 +595,7 @@
               <MappingFragment StoreEntitySet="HaircutTable">
                 <ScalarProperty Name="PriceHaircut" ColumnName="PriceHaircut" />
                 <ScalarProperty Name="NameHaircut" ColumnName="NameHaircut" />
+                <ScalarProperty Name="PersonalNumberHaircut" ColumnName="PersonalNumberHaircut" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -590,6 +604,7 @@
               <MappingFragment StoreEntitySet="ImageWorkerTable">
                 <ScalarProperty Name="CodImage" ColumnName="CodImage" />
                 <ScalarProperty Name="NameImageWorker" ColumnName="NameImageWorker" />
+                <ScalarProperty Name="PersonalNumberImage" ColumnName="PersonalNumberImage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -597,6 +612,7 @@
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.PaulTable">
               <MappingFragment StoreEntitySet="PaulTable">
                 <ScalarProperty Name="NamePaul" ColumnName="NamePaul" />
+                <ScalarProperty Name="PersonalNumberPaul" ColumnName="PersonalNumberPaul" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -605,9 +621,9 @@
               <MappingFragment StoreEntitySet="RecordTable">
                 <ScalarProperty Name="TimeRecord" ColumnName="TimeRecord" />
                 <ScalarProperty Name="DateRecord" ColumnName="DateRecord" />
-                <ScalarProperty Name="PNHaircut" ColumnName="PNHaircut" />
-                <ScalarProperty Name="PNClient" ColumnName="PNClient" />
-                <ScalarProperty Name="PNWorker" ColumnName="PNWorker" />
+                <ScalarProperty Name="PNHaircutRecord" ColumnName="PNHaircutRecord" />
+                <ScalarProperty Name="PNClientRecord" ColumnName="PNClientRecord" />
+                <ScalarProperty Name="PNWorkerRecord" ColumnName="PNWorkerRecord" />
                 <ScalarProperty Name="PersonalNumberRecord" ColumnName="PersonalNumberRecord" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -616,6 +632,7 @@
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.RoleTable">
               <MappingFragment StoreEntitySet="RoleTable">
                 <ScalarProperty Name="NameRole" ColumnName="NameRole" />
+                <ScalarProperty Name="PersonalNumberRole" ColumnName="PersonalNumberRole" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -633,11 +650,11 @@
           <EntitySetMapping Name="WorkerTable">
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.WorkerTable">
               <MappingFragment StoreEntitySet="WorkerTable">
-                <ScalarProperty Name="PaulWorker" ColumnName="PaulWorker" />
+                <ScalarProperty Name="PNPaulWorker" ColumnName="PNPaulWorker" />
                 <ScalarProperty Name="PasswordWorker" ColumnName="PasswordWorker" />
                 <ScalarProperty Name="LoginWorker" ColumnName="LoginWorker" />
-                <ScalarProperty Name="ImageWorker" ColumnName="ImageWorker" />
-                <ScalarProperty Name="RoleWorker" ColumnName="RoleWorker" />
+                <ScalarProperty Name="PNImageWorker" ColumnName="PNImageWorker" />
+                <ScalarProperty Name="PNRoleWorker" ColumnName="PNRoleWorker" />
                 <ScalarProperty Name="MiddlenameWorker" ColumnName="MiddlenameWorker" />
                 <ScalarProperty Name="NameWorker" ColumnName="NameWorker" />
                 <ScalarProperty Name="SurnameWorker" ColumnName="SurnameWorker" />
@@ -655,15 +672,15 @@
           <EntitySetMapping Name="FilterHairdresser">
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.FilterHairdresser">
               <MappingFragment StoreEntitySet="FilterHairdresser">
-                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
                 <ScalarProperty Name="PasswordWorker" ColumnName="PasswordWorker" />
                 <ScalarProperty Name="LoginWorker" ColumnName="LoginWorker" />
-                <ScalarProperty Name="ImageWorker" ColumnName="ImageWorker" />
-                <ScalarProperty Name="RoleWorker" ColumnName="RoleWorker" />
                 <ScalarProperty Name="MiddlenameWorker" ColumnName="MiddlenameWorker" />
                 <ScalarProperty Name="NameWorker" ColumnName="NameWorker" />
                 <ScalarProperty Name="SurnameWorker" ColumnName="SurnameWorker" />
                 <ScalarProperty Name="PersonalNumberWorker" ColumnName="PersonalNumberWorker" />
+                <ScalarProperty Name="NamePaul" ColumnName="NamePaul" />
+                <ScalarProperty Name="CodImage" ColumnName="CodImage" />
+                <ScalarProperty Name="NameRole" ColumnName="NameRole" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

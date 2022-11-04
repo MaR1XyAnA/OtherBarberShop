@@ -11,7 +11,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
         public AutorizationWindows()
         {
             InitializeComponent();
-            AppConnectModelClass.DataBase = new ModelFolder.OtherBarberShopDataBaseEntities(); //Подключение БД к этому окну
+            
         }
 
         #region Управление окном
@@ -58,7 +58,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
             {
                 try
                 {
-                    var user = AppConnectModelClass.DataBase.WorkerTable.FirstOrDefault(
+                    var user = AppConnectModelClass.DataBase().WorkerTable.FirstOrDefault(
                         data => data.LoginWorker == LoginTextBox.Text &&
                                 data.PasswordWorker == PasswordPasswordBox.Password); // Получение данных для работы
                     if (user == null) // Если пользователя нет в БД
@@ -71,9 +71,9 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
                     }
                     else
                     {
-                        switch (user.RoleWorker)
+                        switch (user.PNRoleWorker)
                         {
-                            case "СА": // Если "Роль = СА" 
+                            case 3: // Если "Роль = 3" 
                                 OpenWondow(); // Метод для открытия окна
                                 break;
 

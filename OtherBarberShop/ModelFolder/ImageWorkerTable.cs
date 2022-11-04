@@ -20,6 +20,7 @@ namespace OtherBarberShop.ModelFolder
             this.WorkerTable = new HashSet<WorkerTable>();
         }
     
+        public int PersonalNumberImage { get; set; }
         public string NameImageWorker { get; set; }
         public byte[] CodImage { get; set; }
     

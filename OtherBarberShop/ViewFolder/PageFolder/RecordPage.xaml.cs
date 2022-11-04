@@ -12,12 +12,11 @@ namespace OtherBarberShop.ViewFolder.PageFolder
         public RecordPage()
         {
             InitializeComponent();
-            AppConnectModelClass.DataBase = new OtherBarberShopDataBaseEntities();
-            ListSessionsListBox.ItemsSource = AppConnectModelClass.DataBase.RecordTable.ToList();
-            HaircutComboBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
-            HairdresserComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterHairdresser.ToList();
-            DayComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterDate.ToList();
-            TimrComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterTime.ToList();
+            ListSessionsListBox.ItemsSource = AppConnectModelClass.DataBase().RecordTable.ToList();
+            HaircutComboBox.ItemsSource = AppConnectModelClass.DataBase().HaircutTable.ToList();
+            HairdresserComboBox.ItemsSource = AppConnectModelClass.DataBase().FilterHairdresser.ToList();
+            DayComboBox.ItemsSource = AppConnectModelClass.DataBase().FilterDate.ToList();
+            TimrComboBox.ItemsSource = AppConnectModelClass.DataBase().FilterTime.ToList();
         }
 
         private void EdditRecordButton_Click(object sender, RoutedEventArgs e)
@@ -45,9 +44,11 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 var DaliteRecord = ListSessionsListBox.SelectedItem as RecordTable;
-                AppConnectModelClass.DataBase.RecordTable.Remove(DaliteRecord);
-                AppConnectModelClass.DataBase.SaveChanges();
-                ListSessionsListBox.ItemsSource = AppConnectModelClass.DataBase.RecordTable.ToList();
+                var DaliteClient = ListSessionsListBox.SelectedItem as ClientTabel;
+                AppConnectModelClass.DataBase().RecordTable.Remove(DaliteRecord);
+                AppConnectModelClass.DataBase().ClientTabel.Remove(DaliteClient);
+                AppConnectModelClass.DataBase().SaveChanges();
+                ListSessionsListBox.ItemsSource = AppConnectModelClass.DataBase().RecordTable.ToList();
             }
         }
 

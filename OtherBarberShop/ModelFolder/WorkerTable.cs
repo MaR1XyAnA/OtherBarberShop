@@ -24,11 +24,11 @@ namespace OtherBarberShop.ModelFolder
         public string SurnameWorker { get; set; }
         public string NameWorker { get; set; }
         public string MiddlenameWorker { get; set; }
-        public string RoleWorker { get; set; }
-        public string ImageWorker { get; set; }
+        public int PNRoleWorker { get; set; }
+        public int PNImageWorker { get; set; }
         public string LoginWorker { get; set; }
         public string PasswordWorker { get; set; }
-        public string PaulWorker { get; set; }
+        public int PNPaulWorker { get; set; }
     
         public virtual ImageWorkerTable ImageWorkerTable { get; set; }
         public virtual PaulTable PaulTable { get; set; }

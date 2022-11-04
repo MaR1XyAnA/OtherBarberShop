@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:OtherBarberShop.ViewFolder.PageFolder"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
       Style="{StaticResource PageMunu}">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -137,6 +137,7 @@
                         Text="Поиск"
                         Style="{StaticResource FilterText}"/>
                     <TextBox
+                        TextChanged="SearchTextBox_TextChanged"
                         x:Name="SearchTextBox"
                         Style="{StaticResource TextBoxStyle}"
                         Width="300"/>
@@ -146,6 +147,7 @@
                         Text="Роль"
                         Style="{StaticResource FilterText}"/>
                     <ComboBox
+                        SelectionChanged="RoleComboBox_SelectionChanged"
                         x:Name="RoleComboBox"
                         FontSize="18"
                         DisplayMemberPath="NameRole"
