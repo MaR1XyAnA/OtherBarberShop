@@ -1,4 +1,5 @@
 ﻿using OtherBarberShop.ClassFolder;
+using OtherBarberShop.ModelFolder;
 using System;
 using System.Linq;
 using System.Windows;
@@ -11,7 +12,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
         public AutorizationWindows()
         {
             InitializeComponent();
-            
+            AppConnectModelClass.DataBase = new OtherBarberShopDataBaseEntities();  
         }
 
         #region Управление окном
@@ -34,7 +35,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
         }
         #endregion
 
-        private void OpenWondow() // Метод для открытия окна
+        private void OpenWindow() // Метод для открытия окна
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
@@ -58,7 +59,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
             {
                 try
                 {
-                    var user = AppConnectModelClass.DataBase().WorkerTable.FirstOrDefault(
+                    var user = AppConnectModelClass.DataBase.WorkerTable.FirstOrDefault(
                         data => data.LoginWorker == LoginTextBox.Text &&
                                 data.PasswordWorker == PasswordPasswordBox.Password); // Получение данных для работы
                     if (user == null) // Если пользователя нет в БД
@@ -74,7 +75,7 @@ namespace OtherBarberShop.ViewFolder.WindowFolder
                         switch (user.PNRoleWorker)
                         {
                             case 3: // Если "Роль = 3" 
-                                OpenWondow(); // Метод для открытия окна
+                                OpenWindow(); // Метод для открытия окна
                                 break;
 
                             default: // Всем остальным говорим, что нельзя

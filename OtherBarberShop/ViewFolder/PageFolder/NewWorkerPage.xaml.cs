@@ -14,8 +14,8 @@ namespace OtherBarberShop.ViewFolder.PageFolder
         public NewWorkerPage()
         {
             InitializeComponent();
-            RoleNewComboBox.ItemsSource = AppConnectModelClass.DataBase().RoleTable.ToList();
-            PaulNewComboBox.ItemsSource = AppConnectModelClass.DataBase().PaulTable.ToList();
+            RoleNewComboBox.ItemsSource = AppConnectModelClass.DataBase.RoleTable.ToList();
+            PaulNewComboBox.ItemsSource = AppConnectModelClass.DataBase.PaulTable.ToList();
         }
 
         private void ClearText()
@@ -41,7 +41,7 @@ namespace OtherBarberShop.ViewFolder.PageFolder
             }
             else
             {
-                if (AppConnectModelClass.DataBase().WorkerTable.Count(data => data.SurnameWorker == SurnameNewTextBox.Text && data.NameWorker == NameNewTextBox.Text) > 0)
+                if (AppConnectModelClass.DataBase.WorkerTable.Count(data => data.SurnameWorker == SurnameNewTextBox.Text && data.NameWorker == NameNewTextBox.Text) > 0)
                 {
                     MessageBox.Show("Данный сотрудник уже существует", "Ошибка добавления", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
@@ -61,8 +61,8 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                             PaulTable = PaulNewComboBox.SelectedItem as PaulTable,
                             PNImageWorker = 1
                         };
-                        AppConnectModelClass.DataBase().WorkerTable.Add(workerTable);
-                        AppConnectModelClass.DataBase().SaveChanges();
+                        AppConnectModelClass.DataBase.WorkerTable.Add(workerTable);
+                        AppConnectModelClass.DataBase.SaveChanges();
                         MessageBox.Show("Новый сотрудник успешно добавлен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                         ClearText();
                     }

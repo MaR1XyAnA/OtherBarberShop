@@ -33,8 +33,8 @@
           <Key>
             <PropertyRef Name="PersonalNumberPaul" />
           </Key>
-          <Property Name="PersonalNumberPaul" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NamePaul" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PersonalNumberPaul" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="RecordTable">
           <Key>
@@ -391,8 +391,8 @@
           <Key>
             <PropertyRef Name="PersonalNumberPaul" />
           </Key>
-          <Property Name="PersonalNumberPaul" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NamePaul" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PersonalNumberPaul" Type="Int32" Nullable="false" />
           <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_WorkerTable_PaulTable" FromRole="PaulTable" ToRole="WorkerTable" />
         </EntityType>
         <EntityType Name="RecordTable">
@@ -611,8 +611,8 @@
           <EntitySetMapping Name="PaulTable">
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.PaulTable">
               <MappingFragment StoreEntitySet="PaulTable">
-                <ScalarProperty Name="NamePaul" ColumnName="NamePaul" />
                 <ScalarProperty Name="PersonalNumberPaul" ColumnName="PersonalNumberPaul" />
+                <ScalarProperty Name="NamePaul" ColumnName="NamePaul" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -705,7 +705,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />

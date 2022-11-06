@@ -11,14 +11,14 @@ namespace OtherBarberShop.ViewFolder.PageFolder
         public EdditRecordPage(RecordTable recordTable)
         {
             InitializeComponent();
-            HairdresserComboBox.ItemsSource = AppConnectModelClass.DataBase().FilterHairdresser.ToList();
+            HairdresserComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterHairdresser.ToList();
             
             if (recordTable != null)
             {
                 recordTable = recordTable;
                 DataContext = recordTable;
             }
-            HaircutComboBox.ItemsSource = AppConnectModelClass.DataBase().HaircutTable.ToList();
+            HaircutComboBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
         }
 
         private void SaveButton_Click(object sender, System.Windows.RoutedEventArgs e)

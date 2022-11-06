@@ -123,17 +123,20 @@
     <Compile Include="ModelFolder\WorkerTable.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewFolder\PageFolder\AddEditWorkerPage.xaml.cs">
-      <DependentUpon>AddEditWorkerPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewFolder\PageFolder\AddHaircutPage.xaml.cs">
       <DependentUpon>AddHaircutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFolder\PageFolder\AddWorkerPage.xaml.cs">
+      <DependentUpon>AddWorkerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewFolder\PageFolder\EdditHaircutPage.xaml.cs">
       <DependentUpon>EdditHaircutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewFolder\PageFolder\EdditRecordPage.xaml.cs">
       <DependentUpon>EdditRecordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFolder\PageFolder\EditWorkerPage.xaml.cs">
+      <DependentUpon>EditWorkerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewFolder\PageFolder\ListShopButtonPage.xaml.cs">
       <DependentUpon>ListShopButtonPage.xaml</DependentUpon>
@@ -249,11 +252,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewFolder\PageFolder\AddEditWorkerPage.xaml">
+    <Page Include="ViewFolder\PageFolder\AddHaircutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewFolder\PageFolder\AddHaircutPage.xaml">
+    <Page Include="ViewFolder\PageFolder\AddWorkerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,6 +265,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewFolder\PageFolder\EdditRecordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewFolder\PageFolder\EditWorkerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -290,7 +297,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="ModelFolder\OtherBarberShopDataBaseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

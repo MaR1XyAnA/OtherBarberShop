@@ -26,7 +26,7 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                 NameHaircutTextBox.Text != "" &&
                 PriceHaircutTextBox.Text != "") // Проверка текстовых полей на пустоту
             {
-                if (AppConnectModelClass.DataBase().HaircutTable.Count(
+                if (AppConnectModelClass.DataBase.HaircutTable.Count(
                     data => data.NameHaircut == NameHaircutTextBox.Text) > 0) // Проверка на уже существующие такие данные в БД
                 {
                     MessageBox.Show(
@@ -44,8 +44,8 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                         NameHaircut = NameHaircutTextBox.Text,
                         PriceHaircut = Price
                     };
-                    AppConnectModelClass.DataBase().HaircutTable.Add(haircutTable); // Запись в БД
-                    AppConnectModelClass.DataBase().SaveChanges(); // Сохранение изменений в БД
+                    AppConnectModelClass.DataBase.HaircutTable.Add(haircutTable); // Запись в БД
+                    AppConnectModelClass.DataBase.SaveChanges(); // Сохранение изменений в БД
                     MessageBox.Show(
                         "Новая причёска успешно добавленна",
                         "Уведомление",

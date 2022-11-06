@@ -124,7 +124,7 @@
             BorderThickness="1" 
             BorderBrush="#66FCF1"
             Margin="10"
-            Height="330">
+            Height="auto">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
                 <TextBlock 
                     Text="ФИЛЬТРАЦИЯ" 
@@ -132,7 +132,7 @@
                     Style="{StaticResource StyleTextBlock}"
                     VerticalAlignment="Top"
                     Margin="0 10 0 0"/>
-                <StackPanel Margin="0 5 0 5">
+                <StackPanel Margin="0 5 0 10">
                     <TextBlock
                         Text="Поиск"
                         Style="{StaticResource FilterText}"/>
@@ -141,36 +141,6 @@
                         x:Name="SearchTextBox"
                         Style="{StaticResource TextBoxStyle}"
                         Width="300"/>
-                </StackPanel>
-                <StackPanel Margin="0 5 0 5">
-                    <TextBlock
-                        Text="Роль"
-                        Style="{StaticResource FilterText}"/>
-                    <ComboBox
-                        SelectionChanged="RoleComboBox_SelectionChanged"
-                        x:Name="RoleComboBox"
-                        FontSize="18"
-                        DisplayMemberPath="NameRole"
-                        Height="40"
-                        Width="300"/>
-                </StackPanel>
-                <StackPanel Margin="0 5 0 5">
-                    <TextBlock
-                        Text="Пол"
-                        Style="{StaticResource FilterText}"/>
-                    <ComboBox
-                        FontSize="18"
-                        x:Name="PaulComboBox"
-                        DisplayMemberPath="NamePaul"
-                        Height="40"
-                        Width="300"/>
-                </StackPanel>
-                <StackPanel Margin="0 5 0 5" HorizontalAlignment="Center">
-                    <Button
-                        x:Name="FilterButton"
-                        Click="FilterButton_Click"
-                        Content="ОТФИЛЬТРОВАТЬ"
-                        Width="200"/>
                 </StackPanel>
             </StackPanel>
         </Border>
@@ -194,7 +164,7 @@
             Height="330">
             <Frame x:Name="InformationFrame"/>
         </Border>
-        <StackPanel x:Name="StackPanelButtonControl" Visibility="Collapsed" Margin="0 150 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel x:Name="StackPanelButtonControl" Visibility="Collapsed" Margin="0 150 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
             <Button
                 x:Name="EdditWorkerButton"
                 Click="EdditWorkerButton_Click"
@@ -202,6 +172,7 @@
                 Width="180"
                 Margin="0 0 5 0"/>
             <Button
+                Style="{StaticResource DelitButton}"
                 x:Name="FeliteWorkerButton"
                 Click="FeliteWorkerButton_Click"
                 Content="УДАЛИТЬ"
