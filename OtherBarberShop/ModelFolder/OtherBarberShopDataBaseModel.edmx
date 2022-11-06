@@ -5,14 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище OtherBarberShopDataBaseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ClientTabel">
-          <Key>
-            <PropertyRef Name="PersonalNumberClient" />
-          </Key>
-          <Property Name="PersonalNumberClient" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="SurnameClient" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="NameClient" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
         <EntityType Name="HaircutTable">
           <Key>
             <PropertyRef Name="PersonalNumberHaircut" />
@@ -42,10 +34,11 @@
           </Key>
           <Property Name="PersonalNumberRecord" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PNWorkerRecord" Type="int" Nullable="false" />
-          <Property Name="PNClientRecord" Type="int" Nullable="false" />
           <Property Name="PNHaircutRecord" Type="int" Nullable="false" />
           <Property Name="DateRecord" Type="date" Nullable="false" />
           <Property Name="TimeRecord" Type="time" Precision="0" Nullable="false" />
+          <Property Name="SurnameClient" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="NameClient" Type="nvarchar" MaxLength="80" Nullable="false" />
         </EntityType>
         <EntityType Name="RoleTable">
           <Key>
@@ -118,19 +111,7 @@
           </Key>
           <Property Name="TimeRecord" Type="time" Precision="0" Nullable="false" />
         </EntityType>
-        <Association Name="FK_RecordTable_ClientTabel">
-          <End Role="ClientTabel" Type="Self.ClientTabel" Multiplicity="1" />
-          <End Role="RecordTable" Type="Self.RecordTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ClientTabel">
-              <PropertyRef Name="PersonalNumberClient" />
-            </Principal>
-            <Dependent Role="RecordTable">
-              <PropertyRef Name="PNClientRecord" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_RecordTable_HaircutTable">
+        <Association Name="FK_RecordTable_HaircutTable1">
           <End Role="HaircutTable" Type="Self.HaircutTable" Multiplicity="1" />
           <End Role="RecordTable" Type="Self.RecordTable" Multiplicity="*" />
           <ReferentialConstraint>
@@ -222,7 +203,6 @@
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="Хранилище OtherBarberShopDataBaseModelContainer">
-          <EntitySet Name="ClientTabel" EntityType="Self.ClientTabel" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HaircutTable" EntityType="Self.HaircutTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ImageWorkerTable" EntityType="Self.ImageWorkerTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaulTable" EntityType="Self.PaulTable" Schema="dbo" store:Type="Tables" />
@@ -253,11 +233,7 @@
     [FilterTime].[TimeRecord] AS [TimeRecord]
     FROM [dbo].[FilterTime] AS [FilterTime]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_RecordTable_ClientTabel" Association="Self.FK_RecordTable_ClientTabel">
-            <End Role="ClientTabel" EntitySet="ClientTabel" />
-            <End Role="RecordTable" EntitySet="RecordTable" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RecordTable_HaircutTable" Association="Self.FK_RecordTable_HaircutTable">
+          <AssociationSet Name="FK_RecordTable_HaircutTable1" Association="Self.FK_RecordTable_HaircutTable1">
             <End Role="HaircutTable" EntitySet="HaircutTable" />
             <End Role="RecordTable" EntitySet="RecordTable" />
           </AssociationSet>
@@ -313,7 +289,6 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="ClientTabel" EntityType="OtherBarberShopDataBaseModel.ClientTabel" />
           <EntitySet Name="HaircutTable" EntityType="OtherBarberShopDataBaseModel.HaircutTable" />
           <EntitySet Name="ImageWorkerTable" EntityType="OtherBarberShopDataBaseModel.ImageWorkerTable" />
           <EntitySet Name="PaulTable" EntityType="OtherBarberShopDataBaseModel.PaulTable" />
@@ -324,11 +299,7 @@
           <EntitySet Name="FilterDate" EntityType="OtherBarberShopDataBaseModel.FilterDate" />
           <EntitySet Name="FilterHairdresser" EntityType="OtherBarberShopDataBaseModel.FilterHairdresser" />
           <EntitySet Name="FilterTime" EntityType="OtherBarberShopDataBaseModel.FilterTime" />
-          <AssociationSet Name="FK_RecordTable_ClientTabel" Association="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel">
-            <End Role="ClientTabel" EntitySet="ClientTabel" />
-            <End Role="RecordTable" EntitySet="RecordTable" />
-          </AssociationSet>
-          <AssociationSet Name="FK_RecordTable_HaircutTable" Association="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable">
+          <AssociationSet Name="FK_RecordTable_HaircutTable1" Association="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable1">
             <End Role="HaircutTable" EntitySet="HaircutTable" />
             <End Role="RecordTable" EntitySet="RecordTable" />
           </AssociationSet>
@@ -360,15 +331,6 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-        <EntityType Name="ClientTabel">
-          <Key>
-            <PropertyRef Name="PersonalNumberClient" />
-          </Key>
-          <Property Name="PersonalNumberClient" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="SurnameClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NameClient" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel" FromRole="ClientTabel" ToRole="RecordTable" />
-        </EntityType>
         <EntityType Name="HaircutTable">
           <Key>
             <PropertyRef Name="PersonalNumberHaircut" />
@@ -376,7 +338,7 @@
           <Property Name="PersonalNumberHaircut" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NameHaircut" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="PriceHaircut" Type="Decimal" Nullable="false" Precision="5" Scale="0" />
-          <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable" FromRole="HaircutTable" ToRole="RecordTable" />
+          <NavigationProperty Name="RecordTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable1" FromRole="HaircutTable" ToRole="RecordTable" />
         </EntityType>
         <EntityType Name="ImageWorkerTable">
           <Key>
@@ -401,12 +363,12 @@
           </Key>
           <Property Name="PersonalNumberRecord" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PNWorkerRecord" Type="Int32" Nullable="false" />
-          <Property Name="PNClientRecord" Type="Int32" Nullable="false" />
           <Property Name="PNHaircutRecord" Type="Int32" Nullable="false" />
           <Property Name="DateRecord" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="TimeRecord" Type="Time" Nullable="false" Precision="0" />
-          <NavigationProperty Name="ClientTabel" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_ClientTabel" FromRole="RecordTable" ToRole="ClientTabel" />
-          <NavigationProperty Name="HaircutTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable" FromRole="RecordTable" ToRole="HaircutTable" />
+          <Property Name="SurnameClient" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="NameClient" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HaircutTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_HaircutTable1" FromRole="RecordTable" ToRole="HaircutTable" />
           <NavigationProperty Name="WorkerTable" Relationship="OtherBarberShopDataBaseModel.FK_RecordTable_WorkerTable" FromRole="RecordTable" ToRole="WorkerTable" />
         </EntityType>
         <EntityType Name="RoleTable">
@@ -479,19 +441,7 @@
           </Key>
           <Property Name="TimeRecord" Type="Time" Nullable="false" Precision="0" />
         </EntityType>
-        <Association Name="FK_RecordTable_ClientTabel">
-          <End Type="OtherBarberShopDataBaseModel.ClientTabel" Role="ClientTabel" Multiplicity="1" />
-          <End Type="OtherBarberShopDataBaseModel.RecordTable" Role="RecordTable" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ClientTabel">
-              <PropertyRef Name="PersonalNumberClient" />
-            </Principal>
-            <Dependent Role="RecordTable">
-              <PropertyRef Name="PNClientRecord" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_RecordTable_HaircutTable">
+        <Association Name="FK_RecordTable_HaircutTable1">
           <End Type="OtherBarberShopDataBaseModel.HaircutTable" Role="HaircutTable" Multiplicity="1" />
           <End Type="OtherBarberShopDataBaseModel.RecordTable" Role="RecordTable" Multiplicity="*" />
           <ReferentialConstraint>
@@ -581,15 +531,6 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище OtherBarberShopDataBaseModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище OtherBarberShopDataBaseModel.sp_upgraddiagrams" />
-          <EntitySetMapping Name="ClientTabel">
-            <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.ClientTabel">
-              <MappingFragment StoreEntitySet="ClientTabel">
-                <ScalarProperty Name="NameClient" ColumnName="NameClient" />
-                <ScalarProperty Name="SurnameClient" ColumnName="SurnameClient" />
-                <ScalarProperty Name="PersonalNumberClient" ColumnName="PersonalNumberClient" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="HaircutTable">
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.HaircutTable">
               <MappingFragment StoreEntitySet="HaircutTable">
@@ -619,10 +560,11 @@
           <EntitySetMapping Name="RecordTable">
             <EntityTypeMapping TypeName="OtherBarberShopDataBaseModel.RecordTable">
               <MappingFragment StoreEntitySet="RecordTable">
+                <ScalarProperty Name="NameClient" ColumnName="NameClient" />
+                <ScalarProperty Name="SurnameClient" ColumnName="SurnameClient" />
                 <ScalarProperty Name="TimeRecord" ColumnName="TimeRecord" />
                 <ScalarProperty Name="DateRecord" ColumnName="DateRecord" />
                 <ScalarProperty Name="PNHaircutRecord" ColumnName="PNHaircutRecord" />
-                <ScalarProperty Name="PNClientRecord" ColumnName="PNClientRecord" />
                 <ScalarProperty Name="PNWorkerRecord" ColumnName="PNWorkerRecord" />
                 <ScalarProperty Name="PersonalNumberRecord" ColumnName="PersonalNumberRecord" />
               </MappingFragment>

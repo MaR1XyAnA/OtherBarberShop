@@ -13,10 +13,6 @@ namespace OtherBarberShop.ViewFolder.PageFolder
         {
             InitializeComponent();
             ListSessionsListBox.ItemsSource = AppConnectModelClass.DataBase.RecordTable.ToList();
-            HaircutComboBox.ItemsSource = AppConnectModelClass.DataBase.HaircutTable.ToList();
-            HairdresserComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterHairdresser.ToList();
-            DayComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterDate.ToList();
-            TimrComboBox.ItemsSource = AppConnectModelClass.DataBase.FilterTime.ToList();
         }
 
         private void EdditRecordButton_Click(object sender, RoutedEventArgs e)
@@ -44,17 +40,26 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                 MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 var DaliteRecord = ListSessionsListBox.SelectedItem as RecordTable;
-                var DaliteClient = ListSessionsListBox.SelectedItem as ClientTabel;
                 AppConnectModelClass.DataBase.RecordTable.Remove(DaliteRecord);
-                AppConnectModelClass.DataBase.ClientTabel.Remove(DaliteClient);
                 AppConnectModelClass.DataBase.SaveChanges();
                 ListSessionsListBox.ItemsSource = AppConnectModelClass.DataBase.RecordTable.ToList();
             }
         }
 
-        private void FilterButton_Click(object sender, RoutedEventArgs e)
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            GetSearch(); // Выполняем метод поиска
+        }
+
+        private void GetSearch() // Метод для поиска
+        {
+            var Sweep = AppConnectModelClass.DataBase.RecordTable.ToList(); // Получаем данные по ClientTabel 
+
+            Sweep = Sweep.Where(Cookie =>
+            Cookie.NameClient.ToLower().Contains(SearchTextBox.Text.ToLower()) || // Ищем по NameClient
+            Cookie.SurnameClient.ToLower().Contains(SearchTextBox.Text.ToLower())).ToList();  // Ищем по SurnameClient
+
+            ListSessionsListBox.ItemsSource = Sweep.OrderBy(Cookie => Cookie.PersonalNumberRecord).ToList(); // В ListWorkerListBox выводим найденную SurnameWorker списком 
         }
     }
 }

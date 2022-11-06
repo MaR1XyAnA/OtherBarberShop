@@ -16,12 +16,12 @@ namespace OtherBarberShop.ModelFolder
     {
         public int PersonalNumberRecord { get; set; }
         public int PNWorkerRecord { get; set; }
-        public int PNClientRecord { get; set; }
         public int PNHaircutRecord { get; set; }
         public System.DateTime DateRecord { get; set; }
         public System.TimeSpan TimeRecord { get; set; }
+        public string SurnameClient { get; set; }
+        public string NameClient { get; set; }
     
-        public virtual ClientTabel ClientTabel { get; set; }
         public virtual HaircutTable HaircutTable { get; set; }
         public virtual WorkerTable WorkerTable { get; set; }
     }

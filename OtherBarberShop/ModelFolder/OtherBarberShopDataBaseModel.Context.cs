@@ -27,7 +27,6 @@ namespace OtherBarberShop.ModelFolder
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ClientTabel> ClientTabel { get; set; }
         public virtual DbSet<HaircutTable> HaircutTable { get; set; }
         public virtual DbSet<ImageWorkerTable> ImageWorkerTable { get; set; }
         public virtual DbSet<PaulTable> PaulTable { get; set; }

@@ -82,6 +82,7 @@
             x:Name="NewHaircutButton"
             Click="HaircutButton_Click"/>
         <Button
+            Style="{StaticResource DelitButton}"
             Visibility="Collapsed"
             Margin="10 0 0 0"
             Width="165"
