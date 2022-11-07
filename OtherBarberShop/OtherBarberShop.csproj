@@ -69,6 +69,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ClassFolder\AppConnectModelClass.cs" />
+    <Compile Include="ClassFolder\FrameClass.cs" />
     <Compile Include="ModelFolder\FilterDate.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
     </Compile>
@@ -119,6 +120,9 @@
     </Compile>
     <Compile Include="ModelFolder\WorkerTable.cs">
       <DependentUpon>OtherBarberShopDataBaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewFolder\PageFolder\AddEditHaircutPage.xaml.cs">
+      <DependentUpon>AddEditHaircutPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewFolder\PageFolder\AddHaircutPage.xaml.cs">
       <DependentUpon>AddHaircutPage.xaml</DependentUpon>
@@ -249,6 +253,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ViewFolder\PageFolder\AddEditHaircutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewFolder\PageFolder\AddHaircutPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -308,9 +316,10 @@
       <DependentUpon>OtherBarberShopDataBaseModel.edmx</DependentUpon>
       <LastGenOutput>OtherBarberShopDataBaseModel.cs</LastGenOutput>
     </Content>
+    <SplashScreen Include="ResourcesFolder\Image\Logo.jpg" />
     <Resource Include="ResourcesFolder\Image\NoImage.png" />
     <Resource Include="ResourcesFolder\Image\OtherBarberShopNoImage.png" />
-    <SplashScreen Include="ResourcesFolder\Image\SplashScreenOtherBarberShop.png" />
+    <Resource Include="ResourcesFolder\Image\SplashScreenOtherBarberShop.png" />
     <Resource Include="ResourcesFolder\Icons\OtherBarberShopIcons.png" />
   </ItemGroup>
   <ItemGroup>

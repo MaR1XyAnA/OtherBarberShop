@@ -59,7 +59,7 @@ namespace OtherBarberShop.ViewFolder.PageFolder
                             LoginWorker = LoginNewTextBox.Text,
                             PasswordWorker = PasswordNewTextBox.Text,
                             PaulTable = PaulNewComboBox.SelectedItem as PaulTable,
-                            PNImageWorker = 1
+                            PNImageWorker = 6
                         };
                         AppConnectModelClass.DataBase.WorkerTable.Add(workerTable);
                         AppConnectModelClass.DataBase.SaveChanges();
