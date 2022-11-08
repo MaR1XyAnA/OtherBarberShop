@@ -8,11 +8,11 @@
       Style="{StaticResource PageMunu}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="800"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="800"/>
         </Grid.ColumnDefinitions>
         <ListBox
-            Grid.Column="0"
+            Grid.Column="1"
             Width="780"
             x:Name="ListSessionsListBox"
             SelectionChanged="ListSessionsListBox_SelectionChanged">
@@ -28,8 +28,8 @@
             </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin="0 0 0 0" Height="Auto" CornerRadius="0" Width="Auto" BorderBrush="Transparent">
-                        <Grid>
+                    <Border Background="#379683" Margin="0 0 0 0" Height="140" CornerRadius="0" Width="780" BorderBrush="Transparent">
+                        <Grid Margin="10 0 0 0">
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0">
                                 <StackPanel Orientation="Horizontal" Margin="0 0 0 10">
                                     <TextBlock 
@@ -106,10 +106,10 @@
         <Border
             x:Name="FilterBorder"
             VerticalAlignment="Top"
-            Grid.Column="1" 
+            Grid.Column="0" 
             CornerRadius="0" 
             BorderThickness="1" 
-            BorderBrush="#66FCF1"
+            BorderBrush="#379683"
             Margin="10"
             Height="auto">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
@@ -134,11 +134,11 @@
         <Border
             x:Name="EdditBorder"
             VerticalAlignment="Top"
-            Grid.Column="1" 
+            Grid.Column="0" 
             Visibility="Collapsed"
             CornerRadius="0" 
             BorderThickness="1" 
-            BorderBrush="#66FCF1"
+            BorderBrush="#379683"
             Margin="10"
             Height="400">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
@@ -153,7 +153,7 @@
                 </StackPanel>
                 </StackPanel>
         </Border>
-        <StackPanel x:Name="StackPanelButtonControl" Visibility="Collapsed" Margin="0 150 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel x:Name="StackPanelButtonControl" Visibility="Collapsed" Margin="0 150 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
             <Button
                 x:Name="EdditRecordButton"
                 Click="EdditRecordButton_Click"

@@ -6,7 +6,7 @@
     <Application.Resources>
         <!--#region Border-->
         <Style TargetType="Border" x:Key="BorderControl">
-            <Setter Property="Background" Value="#021E20"/>
+            <Setter Property="Background" Value="#5CDB95"/>
             <Setter Property="CornerRadius" Value="0"/>
         </Style>
         <!--#Endregion -->
@@ -19,8 +19,8 @@
             <Setter Property="Height" Value="40"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="#FEB9C6"/>
-            <Setter Property="Foreground" Value="#048399"/>
+            <Setter Property="Background" Value="#05386B"/>
+            <Setter Property="Foreground" Value="#379683"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -33,13 +33,12 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#ff9baa"/>
-                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="Background" Value="#031f3b"/>
+                                <Setter Property="BorderBrush" Value="#05386B"/>
+                                <Setter Property="BorderThickness" Value="1"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#ff6b81"/>
-                                <Setter Property="BorderBrush" Value="#ff9baa"/>
-                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="Foreground" Value="#5CDB95"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -86,8 +85,7 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="50"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#C5C6C7"/>
-            <!--НЕ ТРОГАТЬ-->
+            <Setter Property="Foreground" Value="#05386B"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontFamily" Value="Bahnschrift"/>
             <Setter Property="Template">
@@ -101,14 +99,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#33969696"/>
-                                <!--НЕ ТРОГАТЬ-->
-                                <Setter Property="Foreground" Value="#fff"/>
-                                <!--НЕ ТРОГАТЬ-->
-                                <Setter Property="BorderBrush" Value="#33969696"/>
-                                <!--НЕ ТРОГАТЬ-->
+                                <Setter Property="Background" Value="#8EE4AF"/>
+                                <Setter Property="Foreground" Value="#EDF5E1"/>
+                                <Setter Property="BorderBrush" Value="#8EE4AF"/>
                                 <Setter Property="BorderThickness" Value="1"/>
-                                <!--НЕ ТРОГАТЬ-->
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -153,20 +147,20 @@
                 x:Name="Border" 
                 Grid.ColumnSpan="2"
                 CornerRadius="0"
-                Background="#FF131A23"
+                Background="#379683"
                 BorderThickness="1" />
                 <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЕМНЫЙ ЦВЕТ-->
                 <Border 
                 Grid.Column="0"
                 CornerRadius="15" 
                 Margin="1" 
-                Background="#FF131A23" 
+                Background="#379683" 
                 BorderThickness="0" />
                 <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЕМНЫЙ ЦВЕТ-->
                 <Path 
                 x:Name="Arrow"
                 Grid.Column="1"     
-                Fill="#66FCF1"
+                Fill="#EDF5E1"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
@@ -185,9 +179,9 @@
             <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
             <Setter Property="MinWidth" Value="100"/>
             <Setter Property="MinHeight" Value="20"/>
-            <Setter Property="Background" Value="#FF131A23"/>
+            <Setter Property="Background" Value="#379683"/>
             <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-            <Setter Property="Foreground" Value="#66FCF1"/>
+            <Setter Property="Foreground" Value="#05386B"/>
             <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
             <Setter Property="Template">
                 <Setter.Value>
@@ -219,7 +213,7 @@
                             VerticalAlignment="Center" 
                             Margin="10,3,23,3"
                             Focusable="True" 
-                            Background="#FF131A23"
+                            Background="#379683"
                             Visibility="Hidden"
                             IsReadOnly="{TemplateBinding IsReadOnly}"/>
                             <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
@@ -237,9 +231,9 @@
                                     <Border 
                                     CornerRadius="0"
                                     x:Name="DropDownBorder"
-                                    Background="#FF131A23"
+                                    Background="#379683"
                                     BorderThickness="1"
-                                    BorderBrush="#66FCF1"/>
+                                    BorderBrush="#EDF5E1"/>
                                     <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                                     <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
                                     <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
@@ -253,7 +247,7 @@
                                 <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#C5C6C7"/>
+                                <Setter Property="Foreground" Value="#05386B"/>
                                 <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                             </Trigger>
                             <Trigger Property="IsGrouping" Value="true">
@@ -277,7 +271,7 @@
         </Style>
         <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
             <Setter Property="SnapsToDevicePixels" Value="true"/>
-            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <Setter Property="Foreground" Value="#05386B"/>
             <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
             <Setter Property="OverridesDefaultStyle" Value="true"/>
             <Setter Property="Template">
@@ -292,15 +286,15 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsHighlighted" Value="true">
-                                <Setter TargetName="Border" Property="Background" Value="#0b0e12"/>
+                                <Setter TargetName="Border" Property="Background" Value="#8EE4AF"/>
                                 <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-                                <Setter Property="Foreground" Value="#66FCF1"/>
+                                <Setter Property="Foreground" Value="#05386B"/>
                                 <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                                 <Setter Property="MinWidth" Value="0"/>
                                 <Setter Property="Width" Value="295"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Foreground" Value="#66FCF1"/>
+                                <Setter Property="Foreground" Value="#05386B"/>
                                 <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -316,7 +310,7 @@
         <!--#Endregion -->
         <!--#region Grid-->
         <Style x:Key="ColorGrid" TargetType="Grid">
-            <Setter Property="Background" Value="#0B0C10"/>
+            <Setter Property="Background" Value="#8EE4AF"/>
             <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
         </Style>
         <!--#Endregion -->
@@ -324,7 +318,7 @@
         <Style TargetType="Image" x:Key="ImageControl">
             <Setter Property="Height" Value="20"/>
             <Setter Property="Width" Value="20"/>
-            <Setter Property="Source" Value="\ResourcesFolder\Icons\OtherBarberShopIcons.png"/>
+            <Setter Property="Source" Value="\ResourcesFolder\Icons\Prostota.png"/>
         </Style>
         <!--#Endregion -->
         <!--#region ListBox-->
@@ -345,9 +339,9 @@
         <!--#region PasswordBox-->
         <Style x:Key="PasswordBoxStyle" TargetType="PasswordBox">
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Background" Value="#FEB9C6"/>
-            <Setter Property="Foreground" Value="#005067"/>
-            <Setter Property="BorderBrush" Value="#FEB9C6"/>
+            <Setter Property="Background" Value="#379683"/>
+            <Setter Property="Foreground" Value="#EDF5E1"/>
+            <Setter Property="BorderBrush" Value="#379683"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -371,11 +365,12 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#ff8a9f"/>
+                                <Setter Property="Background" Value="#497e76"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="BorderBrush" Value="#048399"/>
-                                <Setter Property="BorderThickness" Value="3"/>
+                                <Setter Property="Background" Value="#497e76"/>
+                                <Setter Property="BorderBrush" Value="#05386B"/>
+                                <Setter Property="BorderThickness" Value="1"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -429,8 +424,7 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Thumb}">
-                        <Border CornerRadius="0" Background="#66FCF1" Width="8" BorderBrush="Transparent">
-                            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                        <Border CornerRadius="0" Background="#379683" Width="8" BorderBrush="Transparent">
                             <Rectangle Fill="Transparent" Margin="1"></Rectangle>
                         </Border>
                     </ControlTemplate>
@@ -488,8 +482,7 @@
         <!--#region TextBlock-->
         <Style TargetType="TextBlock" x:Key="StyleTextBlock">
             <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Foreground" Value="#66FCF1"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="Foreground" Value="#05386B"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="FontFamily" Value="Bahnschrift"/>
@@ -500,8 +493,7 @@
         </Style>
         <Style x:Key="DataTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
             <Setter Property="FontSize" Value="17"/>
-            <Setter Property="Foreground" Value="#C5C6C7"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Foreground" Value="#031f3b"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
         <Style x:Key="FilterText" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
@@ -512,9 +504,9 @@
         <!--#region TextBox-->
         <Style x:Key="TextBoxStyle" TargetType="TextBox">
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Background" Value="#FEB9C6"/>
-            <Setter Property="Foreground" Value="#005067"/>
-            <Setter Property="BorderBrush" Value="#FEB9C6"/>
+            <Setter Property="Background" Value="#379683"/>
+            <Setter Property="Foreground" Value="#EDF5E1"/>
+            <Setter Property="BorderBrush" Value="#379683"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -539,11 +531,12 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#ff8a9f"/>
+                                <Setter Property="Background" Value="#497e76"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="BorderBrush" Value="#048399"/>
-                                <Setter Property="BorderThickness" Value="3"/>
+                                <Setter Property="Background" Value="#497e76"/>
+                                <Setter Property="BorderBrush" Value="#05386B"/>
+                                <Setter Property="BorderThickness" Value="1"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -561,8 +554,8 @@
             <Setter Property="Height" Value="40"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="#005067"/>
-            <Setter Property="Foreground" Value="#B96B85"/>
+            <Setter Property="Background" Value="#05386B"/>
+            <Setter Property="Foreground" Value="#379683"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
@@ -576,11 +569,13 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#002833"/>
+                                <Setter Property="Foreground" Value="#EDF5E1"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="FontWeight" Value="Bold"/>
-                                <Setter Property="BorderThickness" Value="3"/>
+                                <Setter Property="Foreground" Value="#EDF5E1"/>
+                                <Setter Property="Background" Value="#031f3b"/>
+                                <Setter Property="BorderBrush" Value="#05386B"/>
+                                <Setter Property="BorderThickness" Value="1"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -590,7 +585,7 @@
         <!--#Endregion -->
         <!--#region Window-->
         <Style x:Key="WindowsStyle" TargetType="Window">
-            <Setter Property="Icon" Value="\ResourcesFolder\Icons\OtherBarberShopIcons.png"/>
+            <Setter Property="Icon" Value="\ResourcesFolder\Icons\Prostota.png"/>
             <!--ПОМЕНЯТЬ ИКОНКУ-->
             <Setter Property="WindowStyle" Value="None"/>
             <Setter Property="ResizeMode" Value="CanMinimize"/>

@@ -13,18 +13,21 @@
     <Grid Style="{StaticResource ColorGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Background="Transparent" x:Name="SpaseBarGrid" MouseDown="SpaseBarGrid_MouseDown">
             <Border Style="{StaticResource BorderControl}"/>
-            <StackPanel Style="{StaticResource StackPanelControl}" HorizontalAlignment="Left" Margin="10 0 0 0">
-                <Image Style="{StaticResource ImageControl}"/>
+            <Grid Width="1200" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Image
+                    Style="{StaticResource ImageControl}"
+                    HorizontalAlignment="Left"/>
                 <TextBlock
+                    HorizontalAlignment="Center"
                     Margin="10 0 0 0"
                     Text="ГЛАВНОЕ ОКНО"
                     Style="{StaticResource StyleTextBlock}"/>
-            </StackPanel>
+            </Grid>
             <StackPanel Style="{StaticResource StackPanelControl}">
                 <Button
                     x:Name="RollUpButton"
@@ -39,26 +42,27 @@
             </StackPanel>
         </Grid>
         <Frame 
-            Grid.Row="1"  
+            Grid.Row="2"  
             x:Name="MainFrame"/>
         <StackPanel
-            HorizontalAlignment="Center"
-            Grid.Row="2" 
+            HorizontalAlignment="Left"
+            Grid.Row="1" 
+            Margin="10 0 0 0"
             Orientation="Horizontal">
             <ToggleButton
-                Margin="0 0 10 0"
+                Margin="0 0 5 0"
                 Style="{StaticResource MenuToggleButton}"
                 x:Name="WorkerButton"
                 Click="WorkerButton_Click"
                 Content="СОТРУДНИКИ"/>
             <ToggleButton 
-                Margin="10 0 10 0"
+                Margin="5 0 5 0"
                 Style="{StaticResource MenuToggleButton}"
                 Name="RecordButton"
                 Click="RecordButton_Click"
                 Content="КЛИЕНТЫ"/>
             <ToggleButton 
-                Margin="10 0 0 0"
+                Margin="5 0 0 0"
                 Style="{StaticResource MenuToggleButton}"
                 Name="ServeseButton"
                 Click="ServeseButton_Click"

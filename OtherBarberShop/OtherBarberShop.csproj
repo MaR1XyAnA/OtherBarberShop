@@ -256,7 +256,8 @@
       <DependentUpon>OtherBarberShopDataBaseModel.edmx</DependentUpon>
       <LastGenOutput>OtherBarberShopDataBaseModel.cs</LastGenOutput>
     </Content>
-    <SplashScreen Include="ResourcesFolder\Image\Logo.jpg" />
+    <SplashScreen Include="ResourcesFolder\Image\Back.jpg" />
+    <Resource Include="ResourcesFolder\Icons\Prostota.png" />
     <Resource Include="ResourcesFolder\Image\NoImage.png" />
     <Resource Include="ResourcesFolder\Image\OtherBarberShopNoImage.png" />
     <Resource Include="ResourcesFolder\Image\SplashScreenOtherBarberShop.png" />

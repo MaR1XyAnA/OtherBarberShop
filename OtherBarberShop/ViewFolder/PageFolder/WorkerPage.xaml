@@ -8,11 +8,11 @@
       Style="{StaticResource PageMunu}">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="800"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="800"/>
         </Grid.ColumnDefinitions>
         <ListBox
-            Grid.Column="0"
+            Grid.Column="1"
             Width="780"
             x:Name="ListWorkerListBox"
             SelectionChanged="ListWorkerListBox_SelectionChanged">
@@ -28,20 +28,21 @@
             </ListBox.ItemContainerStyle>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border Margin="0 0 0 0" Height="Auto" CornerRadius="0" Width="Auto" BorderBrush="Transparent">
-                        <Grid>
+                    <Border Background="#379683" Margin="0 0 0 0" Height="120" CornerRadius="0" Width="780" BorderBrush="Transparent">
+                        <Grid Margin="10 0 0 0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Border 
+                                Grid.Column="0"
                                 x:Name="MaskBorker" 
                                 VerticalAlignment="Center" 
                                 HorizontalAlignment="Center" 
                                 Height="Auto"
                                 CornerRadius="0" 
                                 Opacity="1"
-                                BorderBrush="#1F2833" 
+                                BorderBrush="#379683" 
                                 BorderThickness="50"/>
                             <StackPanel 
                                 VerticalAlignment="Center" 
@@ -119,10 +120,10 @@
         <Border
             x:Name="FilterBorder"
             VerticalAlignment="Top"
-            Grid.Column="1" 
+            Grid.Column="0" 
             CornerRadius="0" 
             BorderThickness="1" 
-            BorderBrush="#66FCF1"
+            BorderBrush="#379683"
             Margin="10"
             Height="auto">
             <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center">
@@ -145,7 +146,7 @@
             </StackPanel>
         </Border>
         <Button
-            Grid.Column="1"
+            Grid.Column="0"
             VerticalAlignment="Bottom"
             x:Name="NewWorkerButton"
             Click="NewWorkerButton_Click"
@@ -156,15 +157,15 @@
             Visibility="Collapsed"
             x:Name="InformationsBorder"
             VerticalAlignment="Top"
-            Grid.Column="1" 
+            Grid.Column="0" 
             CornerRadius="0" 
             BorderThickness="1" 
-            BorderBrush="#66FCF1"
+            BorderBrush="#379683"
             Margin="10"
             Height="330">
             <Frame x:Name="InformationFrame"/>
         </Border>
-        <StackPanel x:Name="StackPanelButtonControl" Visibility="Collapsed" Margin="0 150 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="1" Orientation="Horizontal">
+        <StackPanel x:Name="StackPanelButtonControl" Visibility="Collapsed" Margin="0 150 0 0" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="0" Orientation="Horizontal">
             <Button
                 x:Name="EdditWorkerButton"
                 Click="EdditWorkerButton_Click"

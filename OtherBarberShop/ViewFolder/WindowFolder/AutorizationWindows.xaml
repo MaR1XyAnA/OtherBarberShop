@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Title="АВТОРИЗАЦИЯ" 
         Style="{StaticResource WindowsStyle}"
-        Height="300" Width="600">
+        Height="400" Width="700">
     <Grid Style="{StaticResource ColorGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -16,13 +16,16 @@
         </Grid.RowDefinitions>
         <Grid Background="Transparent" x:Name="SpaseBarGrid" MouseDown="SpaseBarGrid_MouseDown">
             <Border Style="{StaticResource BorderControl}"/>
-            <StackPanel Style="{StaticResource StackPanelControl}" HorizontalAlignment="Left" Margin="10 0 0 0">
-                <Image Style="{StaticResource ImageControl}"/>
+            <Grid Width="700" HorizontalAlignment="Left" Margin="10 0 0 0">
+                <Image
+                    Style="{StaticResource ImageControl}"
+                    HorizontalAlignment="Left"/>
                 <TextBlock
+                    HorizontalAlignment="Center"
                     Margin="10 0 0 0"
                     Text="АВТОРИЗАЦИЯ"
                     Style="{StaticResource StyleTextBlock}"/>
-            </StackPanel>
+            </Grid>
             <StackPanel Style="{StaticResource StackPanelControl}">
                 <Button
                     x:Name="RollUpButton"
@@ -43,35 +46,37 @@
             VerticalAlignment="Center">
             <StackPanel 
                 Margin="0 0 0 10"
-                Orientation="Horizontal"
+                Orientation="Vertical"
                 HorizontalAlignment="Right">
                 <TextBlock 
                     Margin="0 0 5 0"
+                    HorizontalAlignment="Right"
                     Style="{StaticResource StyleTextBlock}"
                     Text="LOGIN"/>
                 <TextBox
                     x:Name="LoginTextBox"
                     Style="{StaticResource TextBoxStyle}"
-                    Width="400"/>
+                    Width="500"/>
             </StackPanel>
             <StackPanel 
                 Margin="0 10 0 0" 
-                Orientation="Horizontal" 
+                Orientation="Vertical" 
                 HorizontalAlignment="Right">
                 <TextBlock 
+                    HorizontalAlignment="Right"
                     Margin="0 0 5 0"
                     Style="{StaticResource StyleTextBlock}"
                     Text="PASSWORD"/>
                 <PasswordBox 
                     x:Name="PasswordPasswordBox"
                     Style="{StaticResource PasswordBoxStyle}"
-                    Width="400"/>
+                    Width="500"/>
             </StackPanel>
             <Button
                 x:Name="EntranceButton"
                 Click="Entrance"
                 Margin="0 30 0 0"
-                Width="200"
+                Width="220"
                 Content="ВОЙТИ"/>
         </StackPanel>        
     </Grid>
