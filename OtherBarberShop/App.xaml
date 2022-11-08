@@ -6,8 +6,7 @@
     <Application.Resources>
         <!--#region Border-->
         <Style TargetType="Border" x:Key="BorderControl">
-            <Setter Property="Background" Value="#1F2833"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Background" Value="#021E20"/>
             <Setter Property="CornerRadius" Value="0"/>
         </Style>
         <!--#Endregion -->
@@ -20,10 +19,8 @@
             <Setter Property="Height" Value="40"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="#45A29E"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-            <Setter Property="Foreground" Value="#C5C6C7"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Background" Value="#FEB9C6"/>
+            <Setter Property="Foreground" Value="#048399"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -36,18 +33,12 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="Background" Value="#ff9baa"/>
                                 <Setter Property="Foreground" Value="White"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="Foreground" Value="White"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
-                                <Setter Property="BorderBrush" Value="#1F2833"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЕМНЫЙ ЦВЕТ-->
+                                <Setter Property="Background" Value="#ff6b81"/>
+                                <Setter Property="BorderBrush" Value="#ff9baa"/>
                                 <Setter Property="BorderThickness" Value="1"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -354,12 +345,9 @@
         <!--#region PasswordBox-->
         <Style x:Key="PasswordBoxStyle" TargetType="PasswordBox">
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Background" Value="#FF131A23"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-            <Setter Property="Foreground" Value="#C5C6C7"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-            <Setter Property="BorderBrush" Value="#FF131A23"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Background" Value="#FEB9C6"/>
+            <Setter Property="Foreground" Value="#005067"/>
+            <Setter Property="BorderBrush" Value="#FEB9C6"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -383,19 +371,11 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FF17202B"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-                                <Setter Property="Foreground" Value="#FF46D8CD"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="Background" Value="#ff8a9f"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="Background" Value="#1F2833"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-                                <Setter Property="Foreground" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="BorderBrush" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="BorderBrush" Value="#048399"/>
+                                <Setter Property="BorderThickness" Value="3"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -532,12 +512,9 @@
         <!--#region TextBox-->
         <Style x:Key="TextBoxStyle" TargetType="TextBox">
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Background" Value="#FF131A23"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-            <Setter Property="Foreground" Value="#C5C6C7"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-            <Setter Property="BorderBrush" Value="#FF131A23"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Background" Value="#FEB9C6"/>
+            <Setter Property="Foreground" Value="#005067"/>
+            <Setter Property="BorderBrush" Value="#FEB9C6"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -562,19 +539,11 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#FF17202B"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-                                <Setter Property="Foreground" Value="#FF46D8CD"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="Background" Value="#ff8a9f"/>
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="Background" Value="#1F2833"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-                                <Setter Property="Foreground" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="BorderBrush" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="BorderBrush" Value="#048399"/>
+                                <Setter Property="BorderThickness" Value="3"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -592,10 +561,8 @@
             <Setter Property="Height" Value="40"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="#45A29E"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-            <Setter Property="Foreground" Value="#C5C6C7"/>
-            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="Background" Value="#005067"/>
+            <Setter Property="Foreground" Value="#B96B85"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ToggleButton">
@@ -609,20 +576,11 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="Foreground" Value="White"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="Background" Value="#002833"/>
                             </Trigger>
                             <Trigger Property="IsChecked" Value="True">
-                                <Setter Property="Background" Value="#66FCF1"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
                                 <Setter Property="FontWeight" Value="Bold"/>
-                                <Setter Property="Foreground" Value="White"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="BorderBrush" Value="White"/>
-                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
-                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="BorderThickness" Value="3"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
