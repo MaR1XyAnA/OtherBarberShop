@@ -4,25 +4,643 @@
              xmlns:local="clr-namespace:OtherBarberShop"
              StartupUri="\ViewFolder\WindowFolder\AutorizationWindows.xaml">
     <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="\StyleFolder\Button.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\ComboBox.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\Page.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\PasswordBox.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\TextBlock.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\TextBox.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\Window.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\Grid.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\ToggleButton.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\Frame.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\StackPanel.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\ComboBox.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\ScrollBar.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\ListBox.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\Border.xaml"/>
-                <ResourceDictionary Source="\StyleFolder\Image.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <!--#region Border-->
+        <Style TargetType="Border" x:Key="BorderControl">
+            <Setter Property="Background" Value="#1F2833"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <!--#Endregion -->
+        <!--#region Button-->
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#45A29E"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="borderone"
+                            CornerRadius="0"
+                            Background="{TemplateBinding Background }"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="White"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="White"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ВЫДЕЛЯЮЩИЙСЯ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
+                                <Setter Property="BorderBrush" Value="#1F2833"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЕМНЫЙ ЦВЕТ-->
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DelitButton" TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderBrush" Value="#ff003c"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#ff003c"/>
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="borderone"
+                            CornerRadius="0"
+                            Background="{TemplateBinding Background }"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderBrush" Value="#ff003c"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonWindowControl" TargetType="Button">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <!--НЕ ТРОГАТЬ-->
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#33969696"/>
+                                <!--НЕ ТРОГАТЬ-->
+                                <Setter Property="Foreground" Value="#fff"/>
+                                <!--НЕ ТРОГАТЬ-->
+                                <Setter Property="BorderBrush" Value="#33969696"/>
+                                <!--НЕ ТРОГАТЬ-->
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <!--НЕ ТРОГАТЬ-->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="CloseButtonWindowControl" TargetType="Button" BasedOn="{StaticResource ButtonWindowControl}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                        CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#ff003c"/>
+                                <!--НЕ ТРОГАТЬ-->
+                                <Setter Property="BorderBrush" Value="Red"/>
+                                <!--НЕ ТРОГАТЬ-->
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <!--НЕ ТРОГАТЬ-->
+                                <Setter Property="Foreground" Value="#fff"/>
+                                <!--НЕ ТРОГАТЬ-->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#Endregion -->
+        <!--#region ComboBox-->
+        <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Border
+                x:Name="Border" 
+                Grid.ColumnSpan="2"
+                CornerRadius="0"
+                Background="#FF131A23"
+                BorderThickness="1" />
+                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЕМНЫЙ ЦВЕТ-->
+                <Border 
+                Grid.Column="0"
+                CornerRadius="15" 
+                Margin="1" 
+                Background="#FF131A23" 
+                BorderThickness="0" />
+                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЕМНЫЙ ЦВЕТ-->
+                <Path 
+                x:Name="Arrow"
+                Grid.Column="1"     
+                Fill="#66FCF1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"
+                />
+                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+            <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
+        </ControlTemplate>
+        <Style x:Key="{x:Type ComboBox}" TargetType="{x:Type ComboBox}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="MinHeight" Value="20"/>
+            <Setter Property="Background" Value="#FF131A23"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Foreground" Value="#66FCF1"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <ToggleButton 
+                            Name="ToggleButton" 
+                            Template="{StaticResource ComboBoxToggleButton}" 
+                            Grid.Column="2" 
+                            Focusable="false"
+                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                            ClickMode="Press">
+                            </ToggleButton>
+                            <ContentPresenter
+                            Name="ContentSite" 
+                            IsHitTestVisible="False"
+                            Content="{TemplateBinding SelectionBoxItem}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                            Margin="10,3,23,3"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left" />
+                            <TextBox 
+                            FontSize="20"
+                            x:Name="PART_EditableTextBox"
+                            Style="{x:Null}" 
+                            Template="{StaticResource ComboBoxTextBox}" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" 
+                            Margin="10,3,23,3"
+                            Focusable="True" 
+                            Background="#FF131A23"
+                            Visibility="Hidden"
+                            IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+                            <Popup 
+                            Name="Popup"
+                            Placement="Bottom"
+                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                            AllowsTransparency="True" 
+                            Focusable="False"
+                            PopupAnimation="Slide">
+                                <Grid Name="DropDown"
+                                SnapsToDevicePixels="True"                
+                                MinWidth="{TemplateBinding ActualWidth}"
+                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border 
+                                    CornerRadius="0"
+                                    x:Name="DropDownBorder"
+                                    Background="#FF131A23"
+                                    BorderThickness="1"
+                                    BorderBrush="#66FCF1"/>
+                                    <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                    <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+                                    <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                    </ScrollViewer>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#C5C6C7"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            </Trigger>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </Trigger>
+                            <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
+                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsEditable"  Value="true">
+                                <Setter Property="IsTabStop" Value="false"/>
+                                <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                                <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="{x:Type ComboBoxItem}" TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="SnapsToDevicePixels" Value="true"/>
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                        <Border 
+                        Name="Border"
+                        Padding="2"
+                        CornerRadius="0"
+                        SnapsToDevicePixels="true">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsHighlighted" Value="true">
+                                <Setter TargetName="Border" Property="Background" Value="#0b0e12"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="MinWidth" Value="0"/>
+                                <Setter Property="Width" Value="295"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#Endregion -->
+        <!--#region Frame-->
+        <Style TargetType="Frame">
+            <Setter Property="NavigationUIVisibility" Value="Hidden"/>
+        </Style>
+        <!--#Endregion -->
+        <!--#region Grid-->
+        <Style x:Key="ColorGrid" TargetType="Grid">
+            <Setter Property="Background" Value="#0B0C10"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+        </Style>
+        <!--#Endregion -->
+        <!--#region Image-->
+        <Style TargetType="Image" x:Key="ImageControl">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Source" Value="\ResourcesFolder\Icons\OtherBarberShopIcons.png"/>
+        </Style>
+        <!--#Endregion -->
+        <!--#region ListBox-->
+        <Style TargetType="ListBox">
+            <Setter Property="VirtualizingPanel.ScrollUnit" Value="Pixel"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <!--#Endregion -->
+        <!--#region Page-->
+        <Style x:Key="PageMunu" TargetType="Page">
+            <Setter Property="Height" Value="604.04"/>
+            <Setter Property="Width" Value="1180"/>
+        </Style>
+        <!--#Endregion PasswordBox-->
+        <!--#region PasswordBox-->
+        <Style x:Key="PasswordBoxStyle" TargetType="PasswordBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="#FF131A23"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="BorderBrush" Value="#FF131A23"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="MaxLength" Value="50"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border 
+                        x:Name="border"
+                        CornerRadius="0"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}">
+                            <ScrollViewer 
+                            x:Name="PART_ContentHost"
+                            Focusable="false"
+                            HorizontalScrollBarVisibility="Hidden"
+                            VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF17202B"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="#FF46D8CD"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#1F2833"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="BorderBrush" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#Endregion -->
+        <!--#region ScrollBar-->
+        <Style x:Key="ScrollBarLineButtonStyle" TargetType="{x:Type RepeatButton}">
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Canvas Height="18">
+                            <Polygon Fill="Transparent" Points="3,15 15,15 9,3"></Polygon>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ScrollBarLineButtonBottomStyle" TargetType="{x:Type RepeatButton}">
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Canvas Height="18">
+                            <Polygon Fill="Transparent" Points="3,3 9,15 15,3"></Polygon>
+                        </Canvas>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ScrollBarPageButtonStyle" TargetType="{x:Type RepeatButton}">
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border CornerRadius="10" Background="Transparent" BorderBrush="Transparent"></Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ScrollBarThumbStyle" TargetType="{x:Type Thumb}">
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Margin" Value="2,0,2,0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border CornerRadius="0" Background="#66FCF1" Width="8" BorderBrush="Transparent">
+                            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            <Rectangle Fill="Transparent" Margin="1"></Rectangle>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <ControlTemplate x:Key="VerticalScrollBar" TargetType="{x:Type ScrollBar}">
+            <Grid Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="1"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition MaxHeight="1"/>
+                </Grid.RowDefinitions>
+                <RepeatButton 
+                    Grid.Row="0" Height="18"
+                    Style="{StaticResource ScrollBarLineButtonStyle}"
+                    Command="ScrollBar.LineUpCommand">
+                </RepeatButton>
+                <Track Name="PART_Track" Grid.Row="1" IsDirectionReversed="True">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton Command="ScrollBar.PageUpCommand" Style="{StaticResource ScrollBarPageButtonStyle}"></RepeatButton>
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb Style="{StaticResource ScrollBarThumbStyle}"></Thumb>
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton Command="ScrollBar.PageDownCommand" Style="{StaticResource ScrollBarPageButtonStyle}"></RepeatButton>
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton 
+                    Grid.Row="3" Height="18"
+                    Style="{StaticResource ScrollBarLineButtonBottomStyle}"
+                    Command="ScrollBar.LineDownCommand">
+                </RepeatButton>
+            </Grid>
+        </ControlTemplate>
+
+        <Style TargetType="{x:Type ScrollBar}">
+            <Setter Property="Template" Value="{StaticResource VerticalScrollBar}"/>
+            <Setter Property="Margin" Value="0 5 10 5"/>
+        </Style>
+        <!--#Endregion StackPanel-->
+        <!--#region StackPanel-->
+        <Style TargetType="StackPanel">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style TargetType="StackPanel" x:Key="StackPanelControl">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Orientation" Value="Horizontal"/>
+        </Style>
+        <!--#Endregion -->
+        <!--#region TextBlock-->
+        <Style TargetType="TextBlock" x:Key="StyleTextBlock">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="#66FCF1"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+        </Style>
+        <Style x:Key="ListTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="DataTextBlock" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ИЛИ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style x:Key="FilterText" TargetType="TextBlock" BasedOn="{StaticResource StyleTextBlock}">
+            <Setter Property="Margin" Value="10 0 0 0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <!--#Endregion -->
+        <!--#region TextBox-->
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="#FF131A23"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="BorderBrush" Value="#FF131A23"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="5 0 0 0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="MaxLength" Value="50"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border 
+                        x:Name="border"
+                        CornerRadius="0"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}">
+                            <ScrollViewer 
+                            x:Name="PART_ContentHost"
+                            Focusable="false"
+                            HorizontalScrollBarVisibility="Hidden"
+                            VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#FF17202B"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="#FF46D8CD"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#1F2833"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="BorderBrush" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#Endregion -->
+        <!--#region ToggleButton-->
+        <Style TargetType="ToggleButton" x:Key="MenuToggleButton">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Bahnschrift"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#45A29E"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="Foreground" Value="#C5C6C7"/>
+            <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border 
+                        Name="borderone"
+                        CornerRadius="0"
+                        Background="{TemplateBinding Background}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="Foreground" Value="White"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Background" Value="#66FCF1"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="FontWeight" Value="Bold"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="BorderBrush" Value="White"/>
+                                <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ СВЕТЛЫЙ ЦВЕТ-->
+                                <Setter Property="BorderThickness" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--#Endregion -->
+        <!--#region Window-->
+        <Style x:Key="WindowsStyle" TargetType="Window">
+            <Setter Property="Icon" Value="\ResourcesFolder\Icons\OtherBarberShopIcons.png"/>
+            <!--ПОМЕНЯТЬ ИКОНКУ-->
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="ResizeMode" Value="CanMinimize"/>
+            <Setter Property="AllowsTransparency" Value="True"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ShowInTaskbar" Value="True"/>
+            <Setter Property="Topmost" Value="False"/>
+        </Style>
+        <!--#Endregion -->
     </Application.Resources>
 </Application>

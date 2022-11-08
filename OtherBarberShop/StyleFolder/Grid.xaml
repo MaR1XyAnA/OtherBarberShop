@@ -1,6 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style x:Key="ColorGrid" TargetType="Grid">
-        <Setter Property="Background" Value="#0B0C10"/> <!--ПОМЕНЯТЬ НА ЛЮБОЙ ДРУГОЙ ТЁМНЫЙ ЦВЕТ-->
-    </Style>
-</ResourceDictionary>
